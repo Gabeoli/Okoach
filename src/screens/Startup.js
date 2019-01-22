@@ -7,6 +7,7 @@ import {Fonts} from '../utils/Fonts';
 import {Colors} from '../utils/Colors';
 import WelcomeText from '../components/text/WelcomeText';
 import StartupLogo from '../components/text/StartupLogo';
+import {RedGradientButton} from '../components/buttons/RedGradientButton';
 
 type Props = {};
 class Startup extends Component<Props> {
@@ -20,11 +21,9 @@ class Startup extends Component<Props> {
           <Text style={styles.instructions}>Sign Up to Continue</Text>
         </View>
         <View style={styles.bottom_buttons}>
-          <TouchableOpacity style={styles.button}>
-            <LinearGradient colors={[Colors.red, Colors.darkred]} start={{x: 0, y: 0}} end={{x: 1, y: 0}} style={styles.button_gradient}>
-              <Text style={styles.button_text}>SIGN UP</Text>
-            </LinearGradient>
-          </TouchableOpacity>
+          <RedGradientButton>
+            Sign Up
+          </RedGradientButton>
           <Text style={styles.instructions}>Already Have an Account?</Text>
           <TouchableOpacity
             style={styles.link}
@@ -49,12 +48,6 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       marginTop: 15,
   },
-  welcome: {
-    fontSize: 32,
-    textAlign: 'center',
-    fontFamily: Fonts.UniversalKnowledge,
-    paddingTop: 30,
-  },
   okoach_text: {
     fontSize:96,
     fontFamily: Fonts.UniversalKnowledge,
@@ -77,22 +70,6 @@ const styles = StyleSheet.create({
     width: 177,
     height: 50,
     marginBottom: 40
-  },
-  button_gradient:{
-    flex: 1,
-    borderRadius: 5,
-    justifyContent: 'center'
-  },
-  button_text: {
-    fontSize: 16,
-    color: 'white',
-    fontFamily: Fonts.Roboto,
-    fontWeight: '700',
-    letterSpacing: 2,
-    textAlign: 'center',
-  },
-  link: {
-
   },
   link_text: {
     fontSize: 16,
