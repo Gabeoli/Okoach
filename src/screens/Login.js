@@ -1,4 +1,3 @@
-
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import SvgUri from 'react-native-svg-uri';
@@ -6,31 +5,59 @@ import LinearGradient from 'react-native-linear-gradient';
 import {Fonts} from '../utils/Fonts';
 import {Colors} from '../utils/Colors';
 import WelcomeText from '../components/text/WelcomeText';
-import StartupLogo from '../components/text/StartupLogo';
+import { TextInput } from 'react-native-gesture-handler';
 
 type Props = {};
-class Startup extends Component<Props> {
+class Login extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
         <View style={styles.startup}>
-          <StartupLogo />
-          <WelcomeText />
+          <SvgUri
+              width="153"
+              height="120"
+              source={require('../../assets/img/main_logo.svg')} />
           <Text style={styles.okoach_text}>OKOACH</Text>
-          <Text style={styles.instructions}>Sign Up to Continue</Text>
+        </View>
+        <View style={styles.login_container}>
+          <View style={styles.text_input}>
+            <SvgUri 
+              width="20"
+              height="20"
+              source={require('../../assets/img/login_icon.svg')}
+              style={{paddingRight: 20}}
+              />
+            <TextInput
+              style={{height: 40, width: '100%'}}
+              defaultValue={"Username"}
+            />   
+          </View>
+          <View style={styles.text_input}>
+            <SvgUri 
+              width="20"
+              height="20"
+              source={require('../../assets/img/password_icon.svg')}
+              style={{paddingRight: 20}} 
+              />
+            <TextInput
+              style={{height: 40, width: '100%'}}
+              defaultValue={"Password"}
+              secureTextEntry={true}
+            />
+          </View>
         </View>
         <View style={styles.bottom_buttons}>
-          <TouchableOpacity style={styles.button}>
+          <TouchableOpacity 
+            style={styles.button}
+            onPress={() => this.props.navigation.navigate('Home')}
+          >
             <LinearGradient colors={[Colors.red, Colors.darkred]} start={{x: 0, y: 0}} end={{x: 1, y: 0}} style={styles.button_gradient}>
-              <Text style={styles.button_text}>SIGN UP</Text>
+              <Text style={styles.button_text}>LOG IN</Text>
             </LinearGradient>
           </TouchableOpacity>
-          <Text style={styles.instructions}>Already Have an Account?</Text>
-          <TouchableOpacity
-            style={styles.link}
-            onPress={() => this.props.navigation.navigate('Login')}
-          >
-            <Text style={styles.link_text}>SIGN IN</Text>
+          <Text style={styles.instructions}>Forgot Your Password?</Text>
+          <TouchableOpacity style={styles.link}>
+            <Text style={styles.link_text}>SIGN UP</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -101,7 +128,22 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     letterSpacing: 2,
     textAlign: 'center'
+  },
+
+  login_container: {
+    width: '100%',
+    alignItems: 'center',
+    flex: 2
+  },
+
+  text_input: {
+    width: '90%',
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    borderBottomWidth: 1,
+    borderBottomColor: Colors.lightgrey,
   }
+
 });
 
-export default Startup;
+export default Login;

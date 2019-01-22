@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {SafeAreaView} from 'react-native';
-import Startup from './src/screens/Startup';
+import Nav from './src/Navigator';
 import {Colors} from './src/utils/Colors';
 
 console.disableYellowBox = true;
@@ -10,9 +10,14 @@ export default class App extends Component<Props> {
   render() {
     return (
       <SafeAreaView
-        style={{flex: 1, backgroundColor: Colors.grey}}
+        style={{
+          flex: 1,
+          borderBottomWidth: 0,
+          backgroundColor: Colors.grey
+        }}
+        forceInset={{ bottom: 'never' }}
       >
-        <Startup />
+        <Nav />
       </SafeAreaView>
     );
   }
