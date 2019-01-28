@@ -5,16 +5,18 @@ import LinearGradient from 'react-native-linear-gradient';
 import {Fonts} from '../utils/Fonts';
 import {Colors} from '../utils/Colors';
 import WelcomeText from '../components/text/WelcomeText';
-import StartupLogo from '../components/text/StartupLogo';
 import { TextInput } from 'react-native-gesture-handler';
 
 type Props = {};
-class Login extends Component<Props> {
+class SignUp extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
         <View style={styles.startup}>
-          <StartupLogo/>
+          <SvgUri
+              width="153"
+              height="120"
+              source={require('../../assets/img/main_logo.svg')} />
           <Text style={styles.okoach_text}>OKOACH</Text>
         </View>
         <View style={styles.login_container}>
@@ -144,4 +146,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default Login;
+export default SignUp;

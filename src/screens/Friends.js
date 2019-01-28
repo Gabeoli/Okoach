@@ -8,11 +8,11 @@ import WelcomeText from '../components/text/WelcomeText';
 
 
 type Props = {};
-class Home extends Component<Props> {
+class Friends extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Home.js</Text>
+        <Text>Friends.js</Text>
         
       </View>
     );
@@ -28,4 +28,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default Home;
+export default Friends;
