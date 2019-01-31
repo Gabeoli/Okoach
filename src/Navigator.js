@@ -24,16 +24,7 @@ const LoginStack = createStackNavigator(
 
 const BottomTabNav = createBottomTabNavigator(
     {
-        Home: {
-            screen: HomeScreen,
-      
-            navigationOptions: {
-              tabBarLabel:"Home Page",
-              tabBarIcon: ({ tintColor }) => (
-                <Icon name="home" size={30} color="#900" />
-              )
-            },
-          },
+        Home: HomeScreen,
         Challenges: ChallengesScreen,
         Friends: FriendsScreen,
         Profile: ProfileScreen

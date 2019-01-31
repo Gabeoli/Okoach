@@ -23,7 +23,9 @@ const Label = styled.Text`
 
 export const RedGradientButton = (props) => {
   return (
-    <ButtonContainer>
+    <ButtonContainer
+      onPress={props.onPress}      
+    >
       <LinearGradient 
       colors={[Colors.red, Colors.darkred]}
       start={{x: 0, y: 0}}

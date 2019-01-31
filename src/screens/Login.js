@@ -7,6 +7,7 @@ import {Colors} from '../utils/Colors';
 import WelcomeText from '../components/text/WelcomeText';
 import StartupLogo from '../components/text/StartupLogo';
 import { TextInput } from 'react-native-gesture-handler';
+import { RedGradientButton } from '../components/buttons/RedGradientButton';
 
 type Props = {};
 class Login extends Component<Props> {
@@ -53,6 +54,13 @@ class Login extends Component<Props> {
               <Text style={styles.button_text}>LOG IN</Text>
             </LinearGradient>
           </TouchableOpacity>
+
+            <RedGradientButton
+              onPress={() => this.props.navigation.navigate('Home')}
+            >
+              Log In
+            </RedGradientButton>
+
           <Text style={styles.instructions}>Forgot Your Password?</Text>
           <TouchableOpacity style={styles.link}>
             <Text style={styles.link_text}>SIGN UP</Text>
