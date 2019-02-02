@@ -1,8 +1,5 @@
-
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
-import SvgUri from 'react-native-svg-uri';
-import LinearGradient from 'react-native-linear-gradient';
 import {Fonts} from '../utils/Fonts';
 import {Colors} from '../utils/Colors';
 import WelcomeText from '../components/text/WelcomeText';
@@ -21,7 +18,9 @@ class Startup extends Component<Props> {
           <Text style={styles.instructions}>Sign Up to Continue</Text>
         </View>
         <View style={styles.bottom_buttons}>
-          <RedGradientButton>
+          <RedGradientButton
+            onPress={() => this.props.navigation.navigate('SignUp')}
+          >
             Sign Up
           </RedGradientButton>
           <Text style={styles.instructions}>Already Have an Account?</Text>

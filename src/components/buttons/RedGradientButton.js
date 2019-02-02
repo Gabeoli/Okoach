@@ -1,5 +1,4 @@
 import React from 'react';
-import {Text, StyleSheet} from 'react-native';
 import styled from 'styled-components/native';
 import {Fonts} from '../../utils/Fonts';
 import {Colors} from '../../utils/Colors';

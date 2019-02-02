@@ -1,17 +1,23 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import { TextInput } from 'react-native-gesture-handler';
 import SvgUri from 'react-native-svg-uri';
 import LinearGradient from 'react-native-linear-gradient';
+
 import {Fonts} from '../utils/Fonts';
 import {Colors} from '../utils/Colors';
-import WelcomeText from '../components/text/WelcomeText';
-import { TextInput } from 'react-native-gesture-handler';
+import { RedGradientButton } from '../components/buttons/RedGradientButton';
+import { UserInputBox } from '../components/inputs/LoginInputs';
 
 type Props = {};
 class SignUp extends Component<Props> {
   render() {
+    console.log(this.props)
     return (
       <View style={styles.container}>
+
+        
+
         <View style={styles.startup}>
           <SvgUri
               width="153"
@@ -20,17 +26,14 @@ class SignUp extends Component<Props> {
           <Text style={styles.okoach_text}>OKOACH</Text>
         </View>
         <View style={styles.login_container}>
-          <View style={styles.text_input}>
-            <SvgUri 
-              width="20"
-              height="20"
-              source={require('../../assets/img/login_icon.svg')}
-              style={{paddingRight: 20}}
-              />
-            <TextInput
-              style={{height: 40, width: '100%'}}
-              defaultValue={"Username"}
-            />   
+          <View
+            style={{ padding: 10 }}
+          >
+            <UserInputBox
+              source={require('../../assets/img/main_logo.svg')} 
+              defaultValue={"HelloTestDickhead"}
+            >  
+            </UserInputBox>
           </View>
           <View style={styles.text_input}>
             <SvgUri 
@@ -47,18 +50,14 @@ class SignUp extends Component<Props> {
           </View>
         </View>
         <View style={styles.bottom_buttons}>
-          <TouchableOpacity 
-            style={styles.button}
-            onPress={() => this.props.navigation.navigate('Home')}
-          >
-            <LinearGradient colors={[Colors.red, Colors.darkred]} start={{x: 0, y: 0}} end={{x: 1, y: 0}} style={styles.button_gradient}>
-              <Text style={styles.button_text}>LOG IN</Text>
-            </LinearGradient>
-          </TouchableOpacity>
-          <Text style={styles.instructions}>Forgot Your Password?</Text>
-          <TouchableOpacity style={styles.link}>
-            <Text style={styles.link_text}>SIGN UP</Text>
-          </TouchableOpacity>
+            <RedGradientButton
+                onPress={() => this.props.navigation.navigate('Home')}
+            >
+            Register
+            </RedGradientButton>
+            <TouchableOpacity style={styles.link}>
+                <Text style={styles.link_text}>Login</Text>
+            </TouchableOpacity>
         </View>
       </View>
     );

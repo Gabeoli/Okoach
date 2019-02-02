@@ -14,7 +14,9 @@ class Home extends Component<Props> {
     return (
       <View style={styles.container}>
         <View>
-          <Text>Home.js</Text>
+          <TouchableOpacity>
+            <Text>Sub-Menu</Text>
+          </TouchableOpacity>
         </View>
         <View>
 

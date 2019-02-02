@@ -1,10 +1,8 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import SvgUri from 'react-native-svg-uri';
-import LinearGradient from 'react-native-linear-gradient';
 import {Fonts} from '../utils/Fonts';
 import {Colors} from '../utils/Colors';
-import WelcomeText from '../components/text/WelcomeText';
 import StartupLogo from '../components/text/StartupLogo';
 import { TextInput } from 'react-native-gesture-handler';
 import { RedGradientButton } from '../components/buttons/RedGradientButton';
@@ -46,24 +44,19 @@ class Login extends Component<Props> {
           </View>
         </View>
         <View style={styles.bottom_buttons}>
-          <TouchableOpacity 
-            style={styles.button}
+          <RedGradientButton
             onPress={() => this.props.navigation.navigate('Home')}
           >
-            <LinearGradient colors={[Colors.red, Colors.darkred]} start={{x: 0, y: 0}} end={{x: 1, y: 0}} style={styles.button_gradient}>
-              <Text style={styles.button_text}>LOG IN</Text>
-            </LinearGradient>
-          </TouchableOpacity>
-
-            <RedGradientButton
-              onPress={() => this.props.navigation.navigate('Home')}
-            >
-              Log In
-            </RedGradientButton>
+            Log In
+          </RedGradientButton>
 
           <Text style={styles.instructions}>Forgot Your Password?</Text>
           <TouchableOpacity style={styles.link}>
-            <Text style={styles.link_text}>SIGN UP</Text>
+            <Text 
+              style={styles.link_text}
+            >
+              SIGN UP
+            </Text>
           </TouchableOpacity>
         </View>
       </View>

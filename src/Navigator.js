@@ -6,7 +6,7 @@ import HomeScreen from './screens/Home';
 import ChallengesScreen from './screens/Challenges';
 import FriendsScreen from './screens/Friends';
 import ProfileScreen from './screens/Profile';
-
+import SignUpScreen from './screens/SignUp';
 
 const LoginStack = createStackNavigator(
     {
@@ -32,11 +32,10 @@ const BottomTabNav = createBottomTabNavigator(
 
 );
 
-
-
 export default createAppContainer(createSwitchNavigator(
   {
     Startup: StartupScreen,
+    SignUp: SignUpScreen,
     Login: LoginStack,
     App: BottomTabNav,
   },
