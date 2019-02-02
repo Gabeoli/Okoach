@@ -5,33 +5,13 @@ import LinearGradient from 'react-native-linear-gradient';
 import {Fonts} from '../utils/Fonts';
 import {Colors} from '../utils/Colors';
 import WelcomeText from '../components/text/WelcomeText';
-import {RedGradientButton} from '../components/buttons/RedGradientButton';
-
 
 type Props = {};
-class Home extends Component<Props> {
+class Hamburger extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <View>
-          <TouchableOpacity
-            onPress={() => this.props.navigation.openDrawer()}
-          >
-            <Text>Sub-Menu</Text>
-          </TouchableOpacity>
-        </View>
-        <View>
-
-        </View>
-        <View>
-          <Text>
-            Looks like you’re not following a programme, Have a browse.
-          </Text>
-          <RedGradientButton>
-            Programmes
-          </RedGradientButton>
-
-        </View>        
+        <Text>Hamburger.js</Text>
       </View>
     );
   }
@@ -46,4 +26,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default Home;
+export default Hamburger;
