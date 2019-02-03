@@ -1,30 +1,39 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
-import SvgUri from 'react-native-svg-uri';
-import LinearGradient from 'react-native-linear-gradient';
+import {RedGradientButton} from '../components/buttons/RedGradientButton';
+import {HamburgerButton} from '../components/buttons/HamburgerButton';
 import {Fonts} from '../utils/Fonts';
 import {Colors} from '../utils/Colors';
-import WelcomeText from '../components/text/WelcomeText';
-import {RedGradientButton} from '../components/buttons/RedGradientButton';
-
+import StartupLogo from '../components/text/StartupLogo';
 
 type Props = {};
 class Home extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <View>
-          <TouchableOpacity
-            onPress={() => this.props.navigation.openDrawer()}
+        <View style={styles.header}>
+          <View 
+            style={styles.hamburger}
           >
-            <Text>Sub-Menu</Text>
-          </TouchableOpacity>
+            <HamburgerButton
+              onPress ={() => this.props.navigation.openDrawer()}
+            />
+          </View>
+          <View style={styles.points}>
+            <Text
+              style={styles.ap1}
+            >
+              000
+            </Text>
+            <Text
+              style={styles.ap2}
+            >
+              AP
+            </Text>
+          </View>
         </View>
-        <View>
-
-        </View>
-        <View>
-          <Text>
+        <View style={styles.body}>
+          <Text style={styles.bodyText}>
             Looks like you’re not following a programme, Have a browse.
           </Text>
           <RedGradientButton>
@@ -35,14 +44,47 @@ class Home extends Component<Props> {
       </View>
     );
   }
-}
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    backgroundColor: '#E5E5E5',
+    backgroundColor: Colors.grey,
   },
+  header: {
+    flex: 1,
+    flexDirection: 'row'
+  },
+  body: {
+    flex: 6,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  bodyText: {
+    textAlign: 'center',
+    paddingBottom: 20,
+    fontFamily: Fonts.Roboto,
+    color: Colors.black
+  },
+  hamburger: {
+    padding: 10
+  },
+  points: {
+    position: 'absolute',
+    right: 10,
+  }, 
+  ap1: {
+    fontFamily: Fonts.UniversalKnowledge,
+    paddingTop: 10,
+    fontSize: 20,
+    color: '#6C6C6C'
+  },
+  ap2: {
+    fontFamily: Fonts.UniversalKnowledge,
+    paddingTop:10,
+    fontSize: 20,
+    color: '#EF7F70'
+  }
 
 });
 

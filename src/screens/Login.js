@@ -51,7 +51,10 @@ class Login extends Component<Props> {
           </RedGradientButton>
 
           <Text style={styles.instructions}>Forgot Your Password?</Text>
-          <TouchableOpacity style={styles.link}>
+          <TouchableOpacity 
+            style={styles.link}
+            onPress={() => this.props.navigation.navigate('SignUp')}
+          >
             <Text 
               style={styles.link_text}
             >
