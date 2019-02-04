@@ -6,9 +6,12 @@ import LinearGradient from 'react-native-linear-gradient';
 
 import {Fonts} from '../utils/Fonts';
 import {Colors} from '../utils/Colors';
-import { RedGradientButton } from '../components/buttons/RedGradientButton';
-import { UserInputBox } from '../components/inputs/LoginInputs';
+
 import StartupLogo from '../components/text/StartupLogo';
+import {RedGradientButton} from '../components/buttons/RedGradientButton';
+import {OkoachText} from '../components/text/OkoachText';
+import {UserInputBox} from '../components/inputs/LoginInputs';
+import {SecondaryLink} from '../components/buttons/SecondaryLink';
 
 type Props = {};
 class SignUp extends Component<Props> {
@@ -16,35 +19,29 @@ class SignUp extends Component<Props> {
     console.log(this.props)
     return (
       <View style={styles.container}>
-
-        
-
         <View style={styles.startup}>
           <StartupLogo/>
-          <Text style={styles.okoach_text}>OKOACH</Text>
+          <OkoachText />
         </View>
         <View style={styles.login_container}>
-          <View
-            style={{ padding: 10 }}
-          >
+          <View>
             <UserInputBox
-              source={require('../../assets/img/main_logo.svg')} 
-              defaultValue={"HelloTestDickhead"}
-            >  
-            </UserInputBox>
+              source={require('../../assets/img/login_icon.svg')} 
+              defaultValue={"Username"}
+            />  
           </View>
-          <View style={styles.text_input}>
-            <SvgUri 
-              width="20"
-              height="20"
-              source={require('../../assets/img/password_icon.svg')}
-              style={{paddingRight: 20}} 
-              />
-            <TextInput
-              style={{height: 40, width: '100%'}}
+          <View>
+            <UserInputBox
+              source={require('../../assets/img/email_icon.svg')} 
+              defaultValue={"Email"}
+            />  
+          </View>
+          <View>
+            <UserInputBox
+              source={require('../../assets/img/password_icon.svg')} 
               defaultValue={"Password"}
               secureTextEntry={true}
-            />
+            />  
           </View>
         </View>
         <View style={styles.bottom_buttons}>
@@ -53,9 +50,11 @@ class SignUp extends Component<Props> {
             >
             Register
             </RedGradientButton>
-            <TouchableOpacity style={styles.link}>
-                <Text style={styles.link_text}>LOGIN</Text>
-            </TouchableOpacity>
+            <SecondaryLink
+              onPress={() => this.props.navigation.navigate('Login')}
+            >
+              Login
+            </SecondaryLink>
         </View>
       </View>
     );
@@ -73,72 +72,14 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       marginTop: 15,
   },
-  welcome: {
-    fontSize: 32,
-    textAlign: 'center',
-    fontFamily: Fonts.UniversalKnowledge,
-    paddingTop: 30,
-  },
-  okoach_text: {
-    fontSize:96,
-    fontFamily: Fonts.UniversalKnowledge,
-    paddingTop: 28,
-    color: Colors.red,
-    letterSpacing: -5
-  },
-  instructions: {
-    fontSize: 16,
-    textAlign: 'center',
-    color: '#333333',
-    fontFamily: Fonts.Roboto,
-    fontWeight: '300'
-  },
   bottom_buttons: {
     flex: 1,
     alignItems: 'center',
   },
-  button: {
-    width: 177,
-    height: 50,
-    marginBottom: 40
-  },
-  button_gradient:{
-    flex: 1,
-    borderRadius: 5,
-    justifyContent: 'center'
-  },
-  button_text: {
-    fontSize: 16,
-    color: 'white',
-    fontFamily: Fonts.Roboto,
-    fontWeight: '700',
-    letterSpacing: 2,
-    textAlign: 'center',
-  },
-  link: {
-
-  },
-  link_text: {
-    fontSize: 16,
-    color: Colors.red,
-    fontFamily: Fonts.Roboto,
-    fontWeight: '700',
-    letterSpacing: 2,
-    textAlign: 'center'
-  },
-
   login_container: {
     width: '100%',
     alignItems: 'center',
     flex: 2
-  },
-
-  text_input: {
-    width: '90%',
-    flexDirection: 'row',
-    justifyContent: 'flex-start',
-    borderBottomWidth: 1,
-    borderBottomColor: Colors.lightgrey,
   }
 
 });
