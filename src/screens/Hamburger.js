@@ -42,7 +42,6 @@ class Hamburger extends Component<Props> {
           </SubmenuItem>
         </View>
         <View style={styles.footer_logo}>
-          <StartupLogo style={styles.logo}/>
         </View>
 
       </View>
@@ -66,9 +65,6 @@ const styles = StyleSheet.create({
   footer_logo: {
     flex: 1
   },
-  logo: {
-    height: 50
-  }
 
 });
 
