@@ -10,7 +10,7 @@ const Label = styled.Text`
     letter-spacing: 3;
     font-size: 16px;
     font-weight: bold;
-    padding-top: 5px;
+    padding-top: 20px;
 `;
 export const SubmenuItem = (props) => {
   return (

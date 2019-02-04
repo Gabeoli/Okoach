@@ -8,6 +8,7 @@ import {Fonts} from '../utils/Fonts';
 import {Colors} from '../utils/Colors';
 import { RedGradientButton } from '../components/buttons/RedGradientButton';
 import { UserInputBox } from '../components/inputs/LoginInputs';
+import StartupLogo from '../components/text/StartupLogo';
 
 type Props = {};
 class SignUp extends Component<Props> {
@@ -19,10 +20,7 @@ class SignUp extends Component<Props> {
         
 
         <View style={styles.startup}>
-          <SvgUri
-              width="153"
-              height="120"
-              source={require('../../assets/img/main_logo.svg')} />
+          <StartupLogo/>
           <Text style={styles.okoach_text}>OKOACH</Text>
         </View>
         <View style={styles.login_container}>
@@ -56,7 +54,7 @@ class SignUp extends Component<Props> {
             Register
             </RedGradientButton>
             <TouchableOpacity style={styles.link}>
-                <Text style={styles.link_text}>Login</Text>
+                <Text style={styles.link_text}>LOGIN</Text>
             </TouchableOpacity>
         </View>
       </View>
