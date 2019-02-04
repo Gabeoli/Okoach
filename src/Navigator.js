@@ -39,7 +39,7 @@ const HamburgerNav = createDrawerNavigator(
     },
     {
        contentComponent: Hamburger,
-       drawerPosition: 'right',
+       drawerPosition: 'left',
     },
 );
 
