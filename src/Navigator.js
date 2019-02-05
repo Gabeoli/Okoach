@@ -1,4 +1,4 @@
-
+import React, {Component} from 'react';
 import { createSwitchNavigator, createStackNavigator, createAppContainer, createBottomTabNavigator, createDrawerNavigator} from 'react-navigation';
 import LoginScreen from './screens/Login';
 import StartupScreen from './screens/Startup';
@@ -9,7 +9,12 @@ import ProfileScreen from './screens/Profile';
 import SignUpScreen from './screens/SignUp';
 import Hamburger from './screens/Hamburger';
 
+import { createIconSetFromFontello } from 'react-native-vector-icons';
+import fontelloConfig from '../config.json';
+
 import {Colors} from './utils/Colors';
+
+const Icon = createIconSetFromFontello(fontelloConfig); //Custom Icons
 
 const LoginStack = createStackNavigator(
     {
@@ -29,11 +34,57 @@ const BottomTabNav = createBottomTabNavigator(
     {
         Home: {
             screen: HomeScreen,
+            navigationOptions: () => ({
+                tabBarIcon: ({tintColor}) => (
+                    <Icon
+                        name="nav_home_icon"
+                        color= {Colors.darkgrey}
+                        size={24}
+                    />
+                )
+    
+            })
         },
-        Challenges: ChallengesScreen,
-        Friends: FriendsScreen,
-        Profile: ProfileScreen
-    },
+        Challenges: {
+            screen: ChallengesScreen,
+            navigationOptions: () => ({
+                tabBarIcon: ({tintColor}) => (
+                    <Icon
+                        name="nav_challenges_icon"
+                        color= {Colors.darkgrey}
+                        size={24}
+                    />
+                )
+            })
+
+        },
+        Friends: {
+            screen: FriendsScreen,
+            navigationOptions: () => ({
+                tabBarIcon: ({tintColor}) => (
+                    <Icon
+                        name="nav_friends_icon"
+                        color= {Colors.darkgrey}
+                        size={24}
+                    />
+                )
+            })
+
+        },
+        Profile: {
+            screen: ProfileScreen,
+            navigationOptions: () => ({
+                tabBarIcon: ({tintColor}) => (
+                    <Icon
+                        name="nav_profile_icon"
+                        color= {Colors.darkgrey}
+                        size={24}
+                    />
+                )
+            })
+
+        },
+    }
 );
 
 const HamburgerNav = createDrawerNavigator(
