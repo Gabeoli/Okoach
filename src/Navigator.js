@@ -9,6 +9,8 @@ import ProfileScreen from './screens/Profile';
 import SignUpScreen from './screens/SignUp';
 import Hamburger from './screens/Hamburger';
 
+import {Colors} from './utils/Colors';
+
 const LoginStack = createStackNavigator(
     {
         Login: LoginScreen
@@ -25,12 +27,13 @@ const LoginStack = createStackNavigator(
 
 const BottomTabNav = createBottomTabNavigator(
     {
-        Home: HomeScreen,
+        Home: {
+            screen: HomeScreen,
+        },
         Challenges: ChallengesScreen,
         Friends: FriendsScreen,
         Profile: ProfileScreen
-    }
-
+    },
 );
 
 const HamburgerNav = createDrawerNavigator(

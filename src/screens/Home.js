@@ -81,9 +81,10 @@ const styles = StyleSheet.create({
   },
   ap2: {
     fontFamily: Fonts.UniversalKnowledge,
-    paddingTop:10,
+    paddingTop:5,
     fontSize: 20,
-    color: '#EF7F70'
+    color: '#EF7F70',
+    textAlign: 'right'
   }
 
 });
