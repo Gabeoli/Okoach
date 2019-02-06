@@ -2,9 +2,12 @@ import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import {RedGradientButton} from '../components/buttons/RedGradientButton';
 import {HamburgerButton} from '../components/buttons/HamburgerButton';
+import {CalendarButton} from '../components/buttons/CalendarButton';
 import {Fonts} from '../utils/Fonts';
 import {Colors} from '../utils/Colors';
 import StartupLogo from '../components/text/StartupLogo';
+
+const date = new Date();
 
 type Props = {};
 class Home extends Component<Props> {
@@ -32,6 +35,9 @@ class Home extends Component<Props> {
             </Text>
           </View>
         </View>
+        <View style={styles.calendarHolder}>
+            <CalendarButton />
+        </View>
         <View style={styles.body}>
           <Text style={styles.bodyText}>
             Looks like you’re not following a programme, Have a browse.
@@ -54,6 +60,10 @@ const styles = StyleSheet.create({
   header: {
     flex: 1,
     flexDirection: 'row'
+  },
+  calendarHolder: {
+    flex: 1,
+    alignItems: 'center',
   },
   body: {
     flex: 6,
