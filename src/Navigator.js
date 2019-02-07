@@ -83,7 +83,16 @@ const BottomTabNav = createBottomTabNavigator(
                 )
             })
 
-        },
+        }
+    }, {
+        tabBarOptions: {    
+            activeTintColor: Colors.red,
+            tintColor: Colors.red,
+            style: {
+                backgroundColor: Colors.grey
+            }
+
+        }
     }
 );
 
