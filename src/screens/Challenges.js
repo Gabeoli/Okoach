@@ -4,7 +4,7 @@ import SvgUri from 'react-native-svg-uri';
 import LinearGradient from 'react-native-linear-gradient';
 import {Fonts} from '../utils/Fonts';
 import {Colors} from '../utils/Colors';
-import WelcomeText from '../components/text/WelcomeText';
+import {TabTitle} from '../components/text/TabTitle';
 
 
 
@@ -13,8 +13,11 @@ class Challenges extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Challenges,js</Text>
-        
+        <View>
+          <TabTitle>
+            Challenges
+          </TabTitle>
+        </View>
         
       </View>
     );
@@ -24,8 +27,7 @@ class Challenges extends Component<Props> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    backgroundColor: '#E5E5E5',
+    backgroundColor: Colors.grey,
   },
 
 });
