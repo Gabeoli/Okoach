@@ -5,6 +5,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import {Fonts} from '../utils/Fonts';
 import {Colors} from '../utils/Colors';
 import {TabTitle} from '../components/text/TabTitle';
+import {GradientSubTitle} from '../components/text/GradientSubTitle';
 
 
 
@@ -17,6 +18,11 @@ class Challenges extends Component<Props> {
           <TabTitle>
             Challenges
           </TabTitle>
+        </View>
+        <View>
+          <GradientSubTitle>
+            Daily
+          </GradientSubTitle>
         </View>
         
       </View>

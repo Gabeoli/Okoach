@@ -11,7 +11,7 @@ const Title = styled.Text`
     color: ${Colors.darkgrey}
     font-family: ${Fonts.UniversalKnowledge};
     text-transform: uppercase;
-    padding-top: 28px;
+    padding: 30px 0px 15px 30px;
 `;
 
 
