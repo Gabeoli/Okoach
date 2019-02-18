@@ -31,7 +31,7 @@ class Challenges extends Component<Props> {
             </View>
           </View>
         </View>
-        <View>
+        <View style={styles.achievementscont}>
           <GradientSubTitle>
             Achievements
           </GradientSubTitle>
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
   dailys: {
     flexDirection: 'row',
     flex: 1
-  }
+  },
 });
 
 export default Challenges;

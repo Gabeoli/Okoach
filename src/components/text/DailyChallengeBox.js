@@ -5,10 +5,16 @@ import styled from 'styled-components/native';
 import {Fonts} from '../../utils/Fonts';
 import {Colors} from '../../utils/Colors';
 
+const Container = styled.View`
+    width: 50%;
+    flex: 1
+    margin-bottom: 30px
+`;
+
 const Box = styled.View`
     padding: 10px;
     height: 178px;
-    width: 50%
+    width: 100%
     flex:1
 `;
 
@@ -47,13 +53,20 @@ const DailyDesc = styled.Text`
 
 export const DailyChallengeBox = (props) => {
   return (
-      <Box>
-          <BoxBg>
-              <BoxText>Test Test</BoxText>
-
-          </BoxBg>
-          <DailyTitle>Daily Reps</DailyTitle>
-          <DailyDesc>Part 1 - Do 10 Reps</DailyDesc>
-      </Box>
+      <Container>
+        <Box>
+            <BoxBg>
+                <BoxText>
+                    10AP / 50AP
+                </BoxText>
+            </BoxBg>
+        </Box>
+        <DailyTitle>
+            Daily Reps
+        </DailyTitle>
+        <DailyDesc>
+            Part 1 - Do Reps
+        </DailyDesc>
+      </Container>
   );
 };
