@@ -5,13 +5,14 @@ import {Colors} from '../../utils/Colors';
 
 const ButtonContainer = styled.TouchableOpacity`
   width: 100%;
+  height: 130px
   background-color: ${Colors.white};
   flex-direction: row
-  flex: 1
 `;
 
-const UserImage = styled.View `
-    flex: 1
+const RankContainer = styled.View `
+    position: absolute;
+    left: 10px;
 `;
 
 const Ranking = styled.Text `
@@ -19,6 +20,12 @@ const Ranking = styled.Text `
     color: ${Colors.black};
     font-family: ${Fonts.Roboto};
     font-weight: 300;
+`;
+
+const UserImage = styled.View `
+    flex: 2
+    align-items: center;
+    justify-content: center;
 `;
 
 const ImageHolder = styled.View `
@@ -38,6 +45,7 @@ const UserType = styled.Text `
 
 const UserText = styled.View`
     flex: 2
+    justify-content: center
 `;
 
 const Username = styled.Text`
@@ -64,9 +72,11 @@ export const FriendButton = (props) => {
   return (
     <ButtonContainer>
         <UserImage>
-            <Ranking>
-                1.
-            </Ranking>
+            <RankContainer>
+                <Ranking>
+                    1.
+                </Ranking>
+            </RankContainer>
             <ImageHolder>
 
             </ImageHolder>
