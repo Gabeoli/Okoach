@@ -7,7 +7,7 @@ import {Colors} from '../utils/Colors';
 import {TabTitle} from '../components/text/TabTitle';
 import {GradientSubTitle} from '../components/text/GradientSubTitle';
 import {DailyChallengeBox} from '../components/text/DailyChallengeBox';
-
+import {AchievementsBox} from '../components/text/AchievementsBox';
 
 
 type Props = {};
@@ -26,8 +26,8 @@ class Challenges extends Component<Props> {
           </GradientSubTitle>
           <View>
             <View style={styles.dailys}>
-                <DailyChallengeBox style={styles.dailysbox}></DailyChallengeBox>
-                <DailyChallengeBox style={styles.dailysbox}></DailyChallengeBox>
+                <DailyChallengeBox style={styles.dailysbox}/>
+                <DailyChallengeBox style={styles.dailysbox}/>
             </View>
           </View>
         </View>
@@ -35,6 +35,9 @@ class Challenges extends Component<Props> {
           <GradientSubTitle>
             Achievements
           </GradientSubTitle>
+        </View>
+        <View>
+          <AchievementsBox/>
         </View>
       </ScrollView>
     );
