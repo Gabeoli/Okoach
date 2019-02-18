@@ -24,7 +24,23 @@ class Challenges extends Component<Props> {
             Daily
           </GradientSubTitle>
         </View>
-        
+        <View>
+          <View>
+            <View style={styles.dailybox}>
+              <Text>10/50AP</Text>
+            </View>
+            <Text style={styles.dailytitle}>Daily Reps 1/5</Text>
+            <Text style={styles.dailydesc}>Part 1 - Do 10 Reps</Text>
+          </View>
+        </View>
+        <View>
+          <GradientSubTitle>
+            Achievements
+          </GradientSubTitle>
+        </View>
+        <View>
+          
+        </View>
       </View>
     );
   }
