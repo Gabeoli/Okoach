@@ -5,32 +5,55 @@ import styled from 'styled-components/native';
 import {Fonts} from '../../utils/Fonts';
 import {Colors} from '../../utils/Colors';
 
-
-const Title = styled.Text`
-    font-size: 35px;
-    color: ${Colors.darkgrey}
-    font-family: ${Fonts.UniversalKnowledge};
-    text-transform: uppercase;
-    padding: 30px 0px 15px 30px;
+const Box = styled.View`
+    padding: 10px;
+    height: 178px;
+    width: 50%
+    flex:1
 `;
 
-const Title = styled.Text`
-    font-size: 35px;
-    color: ${Colors.darkgrey}
+const BoxBg = styled.View`
+    background: ${Colors.placeholdergrey};
+    width: 100%;
+    height: 100%;
+    border-radius: 5;
+`;
+
+const BoxText = styled.Text`
+    font-size: 14px;
+    color: ${Colors.black}
     font-family: ${Fonts.UniversalKnowledge};
     text-transform: uppercase;
-    padding: 30px 0px 15px 30px;
+    padding-top: 10px;
+    text-align: center;
+`;
+
+const DailyTitle = styled.Text`
+    font-size: 24px;
+    color: ${Colors.red}
+    font-family: ${Fonts.UniversalKnowledge};
+    text-transform: uppercase;
+    padding-top: 10px;
+    text-align: center;
+`;
+
+const DailyDesc = styled.Text`
+    font-size: 18px;
+    color: ${Colors.black}
+    font-family: ${Fonts.Roboto};
+    text-align: center;
 `;
 
 
 export const DailyChallengeBox = (props) => {
   return (
-    <View>
-        <View style={styles.dailybox}>
-            <Text>10/50AP</Text>
-        </View>
-        <Text style={styles.dailytitle}>Daily Reps 1/5</Text>
-        <Text style={styles.dailydesc}>Part 1 - Do 10 Reps</Text>
-    </View>
+      <Box>
+          <BoxBg>
+              <BoxText>Test Test</BoxText>
+
+          </BoxBg>
+          <DailyTitle>Daily Reps</DailyTitle>
+          <DailyDesc>Part 1 - Do 10 Reps</DailyDesc>
+      </Box>
   );
 };

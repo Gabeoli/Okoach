@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import {Platform, StyleSheet, Text, View, ScrollView} from 'react-native';
 import SvgUri from 'react-native-svg-uri';
 import LinearGradient from 'react-native-linear-gradient';
 import {Fonts} from '../utils/Fonts';
 import {Colors} from '../utils/Colors';
 import {TabTitle} from '../components/text/TabTitle';
 import {GradientSubTitle} from '../components/text/GradientSubTitle';
+import {DailyChallengeBox} from '../components/text/DailyChallengeBox';
 
 
 
@@ -13,7 +14,7 @@ type Props = {};
 class Challenges extends Component<Props> {
   render() {
     return (
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         <View>
           <TabTitle>
             Challenges
@@ -23,14 +24,11 @@ class Challenges extends Component<Props> {
           <GradientSubTitle>
             Daily
           </GradientSubTitle>
-        </View>
-        <View>
           <View>
-            <View style={styles.dailybox}>
-              <Text>10/50AP</Text>
+            <View style={styles.dailys}>
+                <DailyChallengeBox style={styles.dailysbox}></DailyChallengeBox>
+                <DailyChallengeBox style={styles.dailysbox}></DailyChallengeBox>
             </View>
-            <Text style={styles.dailytitle}>Daily Reps 1/5</Text>
-            <Text style={styles.dailydesc}>Part 1 - Do 10 Reps</Text>
           </View>
         </View>
         <View>
@@ -38,10 +36,7 @@ class Challenges extends Component<Props> {
             Achievements
           </GradientSubTitle>
         </View>
-        <View>
-          
-        </View>
-      </View>
+      </ScrollView>
     );
   }
 }
@@ -52,6 +47,10 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.grey,
   },
 
+  dailys: {
+    flexDirection: 'row',
+    flex: 1
+  }
 });
 
 export default Challenges;
