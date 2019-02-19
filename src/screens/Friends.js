@@ -6,6 +6,7 @@ import {Colors} from '../utils/Colors';
 
 import {TabTitle} from '../components/text/TabTitle';
 import {GradientSubTitle} from '../components/text/GradientSubTitle';
+import {AddFriend} from '../components/buttons/AddFriend';
 import {FriendButton} from '../components/buttons/FriendButton';
 
 
@@ -15,6 +16,9 @@ class Friends extends Component<Props> {
     return (
       <View style={styles.container}>
         <TabTitle>Friends</TabTitle>
+        <View style={styles.findfriends}>
+          <AddFriend/>
+        </View>
         <GradientSubTitle>Leaderboard</GradientSubTitle>
         <FriendButton></FriendButton>
       </View>
@@ -26,8 +30,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.grey,
-  },
-
+  }
 });
 
 export default Friends;
