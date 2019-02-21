@@ -12,6 +12,8 @@ import {ProfileImage} from '../components/holders/ProfileImage';
 import {ProfileAp} from '../components/text/ProfileAp';
 import {ProfileType} from '../components/text/ProfileType';
 import {ProfileLiftingStyle} from '../components/text/ProfileLiftingStyle';
+import {EditButton} from '../components/buttons/EditButton';
+
 
 type Props = {};
 class Profile extends Component<Props> {
@@ -24,6 +26,7 @@ class Profile extends Component<Props> {
           <ProfileAp/>
           <ProfileType/>
           <ProfileLiftingStyle/>
+          <EditButton/>
         </View>
         <GradientSubTitle>Personal Bests</GradientSubTitle>
       </View>
