@@ -29,6 +29,8 @@ class Profile extends Component<Props> {
           <EditButton/>
         </View>
         <GradientSubTitle>Personal Bests</GradientSubTitle>
+        <View>
+        </View>
       </View>
     );
   }
