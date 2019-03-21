@@ -22,10 +22,19 @@ class Hamburger extends Component<Props> {
           <SubmenuTitle>
             Menu
           </SubmenuTitle>
-          <SubmenuItem>
+          <SubmenuItem
+            onPress={() => this.props.navigation.navigate('MyCoach')}
+          >
+            My Coach
+          </SubmenuItem>
+          <SubmenuItem
+            onPress={() => this.props.navigation.navigate('PublicProgrammes')}
+          >
             Public Programmes
           </SubmenuItem>
-          <SubmenuItem>
+          <SubmenuItem
+            onPress={() => this.props.navigation.navigate('SavedProgrammes')}
+          >
             Saved Programmes
           </SubmenuItem>
           <SubmenuItem>

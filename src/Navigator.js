@@ -9,6 +9,10 @@ import ProfileScreen from './screens/Profile';
 import SignUpScreen from './screens/SignUp';
 import Hamburger from './screens/Hamburger';
 
+import MyCoachScreen from './screens/submenu_screens/MyCoach';
+import PublicProgrammesScreen from './screens/submenu_screens/PublicProgrammes';
+import SavedProgrammesScreen from './screens/submenu_screens/SavedProgrammes';
+
 import { createIconSetFromFontello } from 'react-native-vector-icons';
 import fontelloConfig from '../config.json';
 
@@ -99,6 +103,15 @@ const BottomTabNav = createBottomTabNavigator(
 const HamburgerNav = createDrawerNavigator(
     {
         BottomTabNav,
+        MyCoach: {
+            screen: MyCoachScreen
+        },
+        PublicProgrammes: {
+            screen: PublicProgrammesScreen
+        },
+        SavedProgrammes: {
+            screen: SavedProgrammesScreen
+        }
     },
     {
        contentComponent: Hamburger,
@@ -106,12 +119,6 @@ const HamburgerNav = createDrawerNavigator(
     },
 );
 
-// const SecondaryNav = createStackNavigator(
-//     {
-//         PublicProgrammes: PublicProgrammesScreen
-
-//     }
-// );
 
 export default createAppContainer(createSwitchNavigator(
   {
@@ -119,6 +126,9 @@ export default createAppContainer(createSwitchNavigator(
     SignUp: SignUpScreen,
     Login: LoginStack,
     App: HamburgerNav,
+    // MyCoach: MyCoachScreen,
+    // PublicProgrammes: PublicProgrammesScreen,
+    // SavedProgrammes: SavedProgrammesScreen
   },
   {
     initialRouteName: 'Startup',
