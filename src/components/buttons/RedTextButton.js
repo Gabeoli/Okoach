@@ -20,7 +20,7 @@ const Label = styled.Text `
 
 export const RedTextButton = (props) => {
   return (
-    <ButtonContainer>
+    <ButtonContainer onPress={props.onPress}>
         <Label>
             {props.children}
         </Label>

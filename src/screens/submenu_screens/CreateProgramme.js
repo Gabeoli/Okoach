@@ -14,7 +14,7 @@ class CreateProgramme extends Component<Props> {
       <View style={styles.container}>
         <View style={styles.header}>
           <SubScreenTitle 
-            onPress={() => this.props.navigation.goBack()}
+            onPress={() => this.props.navigation.navigate('Home')}
           >
           Create Programme
         </SubScreenTitle>

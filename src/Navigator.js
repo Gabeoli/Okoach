@@ -101,6 +101,21 @@ const BottomTabNav = createBottomTabNavigator(
     }
 );
 
+const SavedProgrammesStack = createStackNavigator (
+    {
+        SavedProgrammes: SavedProgrammesScreen,
+        CreateProgramme: CreateProgrammeScreen
+    },
+    {
+        headerMode: 'none',
+        navigationOptions: {
+            headerStyle: {
+                headerVisible: false,
+            },
+        },
+    }
+);
+
 const HamburgerNav = createDrawerNavigator(
     {
         BottomTabNav,
@@ -111,7 +126,7 @@ const HamburgerNav = createDrawerNavigator(
             screen: PublicProgrammesScreen
         },
         SavedProgrammes: {
-            screen: SavedProgrammesScreen
+            screen: SavedProgrammesStack
         }
     },
     {
@@ -119,13 +134,6 @@ const HamburgerNav = createDrawerNavigator(
        drawerPosition: 'left',
     },
 );
-
-const SavedProgrammesStack = createStackNavigator (
-    {
-        SavedProgrammes: SavedProgrammesScreen,
-        CreateProgramme: CreateProgrammeScreen
-    }
-)
 
 
 export default createAppContainer(createSwitchNavigator(
