@@ -12,6 +12,7 @@ import Hamburger from './screens/Hamburger';
 import MyCoachScreen from './screens/submenu_screens/MyCoach';
 import PublicProgrammesScreen from './screens/submenu_screens/PublicProgrammes';
 import SavedProgrammesScreen from './screens/submenu_screens/SavedProgrammes';
+import CreateProgrammeScreen from './screens/submenu_screens/CreateProgramme';
 
 import { createIconSetFromFontello } from 'react-native-vector-icons';
 import fontelloConfig from '../config.json';
@@ -118,6 +119,13 @@ const HamburgerNav = createDrawerNavigator(
        drawerPosition: 'left',
     },
 );
+
+const SavedProgrammesStack = createStackNavigator (
+    {
+        SavedProgrammes: SavedProgrammesScreen,
+        CreateProgramme: CreateProgrammeScreen
+    }
+)
 
 
 export default createAppContainer(createSwitchNavigator(

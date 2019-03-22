@@ -6,8 +6,14 @@ import {Fonts} from '../../utils/Fonts';
 import {Colors} from '../../utils/Colors';
 
 import {SubScreenTitle} from '../../components/text/SubScreenTitle'
-import {SubScreenHeaderBg} from '../../components/background_style/SubScreenHeaderBg'
-import {BackButton} from '../../components/buttons/BackButton'
+
+import {TabTitle} from '../../components/text/TabTitle';
+import {GradientSubTitle} from '../../components/text/GradientSubTitle';
+import {ProfileImage} from '../../components/holders/ProfileImage';
+import {ProfileAp} from '../../components/text/ProfileAp';
+import {ProfileType} from '../../components/text/ProfileType';
+import {ProfileLiftingStyle} from '../../components/text/ProfileLiftingStyle';
+
 
 
 type Props = {};
@@ -16,16 +22,19 @@ class MyCoach extends Component<Props> {
     return (
       <View style={styles.container}>
         <View style={styles.header}>
-        {/* <SubScreenHeaderBg/> */}
-        {/* <BackButton
-                  onPress={() => this.props.navigation.goBack()}
-          /> */}
           <SubScreenTitle 
             onPress={() => this.props.navigation.goBack()}
           >
             My Coach
           </SubScreenTitle>
         </View>
+        <View style={styles.details}>
+          <ProfileImage/>
+          <ProfileAp/>
+          <ProfileType/>
+          <ProfileLiftingStyle/>
+        </View>
+
       </View>
     );
   }
@@ -36,10 +45,8 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: Colors.grey,
   },
-
-  header: {
-    height: 150
-
+  details: {
+    alignItems: 'center',
   }
 });
 

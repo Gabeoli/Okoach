@@ -7,10 +7,8 @@ import {Colors} from '../../utils/Colors';
 import {SubScreenTitle} from '../../components/text/SubScreenTitle';
 import {RedTextButton} from '../../components/buttons/RedTextButton';
 
-import {ProgrammeListItem} from '../../components/holders/ProgrammeListItem';
-
 type Props = {};
-class SavedProgrammes extends Component<Props> {
+class CreateProgramme extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
@@ -18,21 +16,11 @@ class SavedProgrammes extends Component<Props> {
           <SubScreenTitle 
             onPress={() => this.props.navigation.goBack()}
           >
-          Saved Programmes 
+          Create Programme
         </SubScreenTitle>
         </View>
         <View>
-          <RedTextButton
-            onPress={() => this.props.navigation.navigate('CreateProgramme')}
-          >
-            Create
-          </RedTextButton>
-        </View>
-        <View>
-          <ProgrammeListItem
-            Title ={'Test'}
-          >
-          </ProgrammeListItem>
+          <RedTextButton>Create</RedTextButton>
         </View>
       </View>
     );
@@ -47,4 +35,4 @@ const styles = StyleSheet.create({
 });
 
 
-export default SavedProgrammes;
+export default CreateProgramme;
