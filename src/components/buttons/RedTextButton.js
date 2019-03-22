@@ -4,7 +4,7 @@ import {Fonts} from '../../utils/Fonts';
 import {Colors} from '../../utils/Colors';
 
 const ButtonContainer = styled.TouchableOpacity`
-    width: 25%;
+    width: 100%;
 `;
 
 const Label = styled.Text `

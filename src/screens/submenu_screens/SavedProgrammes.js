@@ -21,7 +21,7 @@ class SavedProgrammes extends Component<Props> {
           Saved Programmes 
         </SubScreenTitle>
         </View>
-        <View>
+        <View style={styles.buttonholders}>
           <RedTextButton
             onPress={() => this.props.navigation.navigate('CreateProgramme')}
           >
@@ -44,6 +44,10 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: Colors.grey,
   }, 
+  buttonholders: {
+    paddingTop: 10,
+    paddingBottom: 10
+  }
 });
 
 

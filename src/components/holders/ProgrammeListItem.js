@@ -7,12 +7,29 @@ import {Fonts} from '../../utils/Fonts';
 import {Colors} from '../../utils/Colors';
 
 import {StarImage} from '../holders/StarImage';
+import {RedTextButton} from '../buttons/RedTextButton';
 
 const Container = styled.View`
     width: 100%;
     height: 115px;
     background: ${Colors.white};
     padding: 10px 15px;
+    display: flex;
+    flex-direction: row;
+`;
+
+const Left = styled.View `
+    width: 75%;
+`;
+const Right = styled.View `
+    width: 25%;
+    align-items: center;
+    position: relative;
+`;
+
+const BtnHolder = styled.View`
+    align-items: center;
+    justify-content: center;
 `;
 
 const Title = styled.Text`
@@ -45,27 +62,35 @@ const Username = styled.Text`
 const Rating = styled.View`
     display: flex;
     flex-direction: row
+    padding-top: 10px
 `;
 
 export const ProgrammeListItem = (props) => {
   return (
     <Container>
-        <Title>
-            {props.Title}
-        </Title>
-        <Category>
-            Weightlifting
-        </Category>
-        <CreatedBy>Created By 
-            <Username> User123</Username>
-        </CreatedBy>
-        <Rating>
-            <StarImage/>
-            <StarImage/>
-            <StarImage/>
-            <StarImage/>
-            <StarImage/>
-        </Rating>
+        <Left>
+            <Title>
+                {props.Title}
+            </Title>
+            <Category>
+                Weightlifting
+            </Category>
+            <CreatedBy>Created By 
+                <Username> User123</Username>
+            </CreatedBy>
+            <Rating>
+                <StarImage/>
+                <StarImage/>
+                <StarImage/>
+                <StarImage/>
+                <StarImage/>
+            </Rating>
+        </Left> 
+        <Right>
+            <BtnHolder>
+                <RedTextButton>View</RedTextButton>
+            </BtnHolder>
+        </Right>
     </Container>
   );
 };
