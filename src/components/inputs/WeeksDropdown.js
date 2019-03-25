@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Text, StyleSheet} from 'react-native';
 import styled from 'styled-components/native';
+
 import { TextInput, Picker } from 'react-native-gesture-handler';
 import {Fonts} from '../../utils/Fonts';
 import {Colors} from '../../utils/Colors';

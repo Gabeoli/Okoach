@@ -142,9 +142,6 @@ export default createAppContainer(createSwitchNavigator(
     SignUp: SignUpScreen,
     Login: LoginStack,
     App: HamburgerNav,
-    // MyCoach: MyCoachScreen,
-    // PublicProgrammes: PublicProgrammesScreen,
-    // SavedProgrammes: SavedProgrammesScreen
   },
   {
     initialRouteName: 'Startup',
