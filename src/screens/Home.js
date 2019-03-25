@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import {Platform, StyleSheet, Text, View, TouchableOpacity, Modal} from 'react-native';
 import {RedGradientButton} from '../components/buttons/RedGradientButton';
 import {HamburgerButton} from '../components/buttons/HamburgerButton';
 import {CalendarButton} from '../components/buttons/CalendarButton';
+import {CalendarHolder} from '../components/holders/CalendarHolder';
 import {Fonts} from '../utils/Fonts';
 import {Colors} from '../utils/Colors';
 import StartupLogo from '../components/text/StartupLogo';
@@ -10,7 +11,17 @@ import StartupLogo from '../components/text/StartupLogo';
 const date = new Date();
 
 type Props = {};
+
 class Home extends Component<Props> {
+
+  state = {
+    modalVisible: false,
+  }
+  
+  setModalVisible(visible) {
+    this.setState({modalVisible: visible})
+  };
+
   render() {
     return (
       <View style={styles.container}>
@@ -35,8 +46,37 @@ class Home extends Component<Props> {
             </Text>
           </View>
         </View>
+
+        <Modal
+          animationType="slide"
+          presentationStyle="pageSheet"
+          style={styles.modal}
+          transparent={false}
+          visible={this.state.modalVisible}
+          onRequestClose={() => {
+            alert('Modal has been closed.');
+          }}>
+          <View>
+            <View style={{marginTop: 35}}>
+              <CalendarHolder />               
+            </View>
+            <View style={styles.closeBtn}> 
+            <RedGradientButton
+              onPress={() => {
+                this.setModalVisible(!this.state.modalVisible)
+              }}>
+              Close
+            </RedGradientButton>
+            </View>
+          </View>
+        </Modal>
+        
         <View style={styles.calendarHolder}>
-            <CalendarButton />
+            <CalendarButton 
+              onPress ={() => {
+                this.setModalVisible(true)
+              }}
+            />
         </View>
         <View style={styles.body}>
           <Text style={styles.bodyText}>
@@ -95,6 +135,16 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: '#EF7F70',
     textAlign: 'right'
+  },
+  modal: {
+    backgroundColor: 'white',
+    margin: 15, 
+    alignItems: undefined,
+    justifyContent: undefined,
+  },
+  closeBtn: {
+    justifyContent: 'center',
+    alignItems: 'center'
   }
 
 });
