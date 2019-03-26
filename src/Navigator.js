@@ -13,6 +13,7 @@ import MyCoachScreen from './screens/submenu_screens/MyCoach';
 import PublicProgrammesScreen from './screens/submenu_screens/PublicProgrammes';
 import SavedProgrammesScreen from './screens/submenu_screens/SavedProgrammes';
 import CreateProgrammeScreen from './screens/submenu_screens/CreateProgramme';
+import EditProgrammeScreen from './screens/submenu_screens/EditProgramme';
 
 import { createIconSetFromFontello } from 'react-native-vector-icons';
 import fontelloConfig from '../config.json';
@@ -104,7 +105,8 @@ const BottomTabNav = createBottomTabNavigator(
 const SavedProgrammesStack = createStackNavigator (
     {
         SavedProgrammes: SavedProgrammesScreen,
-        CreateProgramme: CreateProgrammeScreen
+        CreateProgramme: CreateProgrammeScreen,
+        EditProgramme: EditProgrammeScreen
     },
     {
         headerMode: 'none',

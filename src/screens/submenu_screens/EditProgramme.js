@@ -33,28 +33,8 @@ class CreateProgramme extends Component<Props> {
           <SubScreenTitle 
             onPress={() => this.props.navigation.goBack()}
           >
-          Create Programme
+          Edit Programme
         </SubScreenTitle>
-        </View>
-        <ProgrammeTitle/>
-        <WeeksDropdown
-          selectedValue={this.state.language}
-          onValueChange={(lang) => this.setState({language: lang})}
-        />
-        {/* <Category
-          selectedValue={this.state.language}
-          onValueChange={(lang) => this.setState({language: lang})}
-        /> */}
-        <DaysCheckbox>
-          
-        </DaysCheckbox>
-
-        <View style ={styles.buttoncontainer}>
-          <RedGradientButton
-            onPress={() => this.props.navigation.navigate('EditProgramme')}
-          >
-            Create
-          </RedGradientButton>
         </View>
       </ScrollView>
     );

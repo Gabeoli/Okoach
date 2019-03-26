@@ -4,6 +4,12 @@ import { TextInput } from 'react-native-gesture-handler';
 import SvgUri from 'react-native-svg-uri';
 import LinearGradient from 'react-native-linear-gradient';
 
+import { connect } from 'react-redux';
+
+/*Actions*/
+import {SET_SIGNUP_DETAILS} from '../store/signUp/Actions';
+
+/*Vars*/
 import {Fonts} from '../utils/Fonts';
 import {Colors} from '../utils/Colors';
 
@@ -13,8 +19,28 @@ import {OkoachText} from '../components/text/OkoachText';
 import {UserInputBox} from '../components/inputs/LoginInputs';
 import {SecondaryLink} from '../components/buttons/SecondaryLink';
 
+
+
 type Props = {};
 class SignUp extends Component<Props> {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      username: '',
+      email: '',
+      password: '',
+    };
+  }
+
+  onChangeText = (key, val) => {
+    console.log(this.state.username)
+    this.setState({
+      isError: false,
+      [key]: val
+    })
+  }
+
   render() {
     console.log(this.props)
     return (
@@ -28,12 +54,15 @@ class SignUp extends Component<Props> {
             <UserInputBox
               source={require('../../assets/img/login_icon.svg')} 
               defaultValue={"Username"}
+              value={this.state.username}
+              onChangeText={val => this.onChangeText('username', val)}
             />  
           </View>
           <View>
             <UserInputBox
               source={require('../../assets/img/email_icon.svg')} 
               defaultValue={"Email"}
+              
             />  
           </View>
           <View>
@@ -41,12 +70,13 @@ class SignUp extends Component<Props> {
               source={require('../../assets/img/password_icon.svg')} 
               defaultValue={"Password"}
               secureTextEntry={true}
+              
             />  
           </View>
         </View>
         <View style={styles.bottom_buttons}>
             <RedGradientButton
-                onPress={() => this.props.navigation.navigate('Home')}
+              onPress={() => this.props.dispatch({ type: SET_SIGNUP_DETAILS, payload: this.props.username })}
             >
             Register
             </RedGradientButton>
@@ -84,4 +114,10 @@ const styles = StyleSheet.create({
 
 });
 
-export default SignUp;
+const mapStateToProps = (state) => ({
+  username: state.username,
+  email: state.email,
+  password: state.password,
+});
+
+export default connect(mapStateToProps)(SignUp);
