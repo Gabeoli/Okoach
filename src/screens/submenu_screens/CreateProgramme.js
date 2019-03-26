@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import {Platform, StyleSheet, Text, View, TouchableOpacity, ScrollView} from 'react-native';
 
 import {Fonts} from '../../utils/Fonts';
 import {Colors} from '../../utils/Colors';
@@ -11,6 +11,8 @@ import {RedTextButton} from '../../components/buttons/RedTextButton';
 import {ProgrammeTitle} from '../../components/inputs/ProgrammeTitle';
 import {WeeksDropdown} from '../../components/inputs/WeeksDropdown';
 import {Category} from '../../components/inputs/Category';
+import { RedGradientButton } from '../../components/buttons/RedGradientButton';
+import { DaysCheckbox } from '../../components/inputs/DaysCheckbox';
 
 
 
@@ -26,7 +28,7 @@ class CreateProgramme extends Component<Props> {
 
   render() {
     return (
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         <View style={styles.header}>
           <SubScreenTitle 
             onPress={() => this.props.navigation.goBack()}
@@ -43,7 +45,17 @@ class CreateProgramme extends Component<Props> {
           selectedValue={this.state.language}
           onValueChange={(lang) => this.setState({language: lang})}
         />
-      </View>
+        <DaysCheckbox>
+          
+        </DaysCheckbox>
+
+        <View style ={styles.buttoncontainer}>
+          <RedGradientButton
+          >
+            Create
+          </RedGradientButton>
+        </View>
+      </ScrollView>
     );
   }
 }
@@ -53,6 +65,10 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: Colors.grey,
   }, 
+  buttoncontainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+  }
 });
 
 

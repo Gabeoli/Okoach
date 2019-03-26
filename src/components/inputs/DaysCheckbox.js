@@ -1,12 +1,17 @@
 import React, {Component} from 'react';
-import {Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {View, TouchableOpacity} from 'react-native';
 import styled from 'styled-components/native';
+
+import {RadioButton} from '../buttons/RadioButton';
 
 import {TextInput} from 'react-native-gesture-handler';
 import {Fonts} from '../../utils/Fonts';
 import {Colors} from '../../utils/Colors';
 
 const Container = styled.View`
+
+    margin-top: 10px;
+    margin-bottom: 10px;
 `;
 
 const Label = styled.Text`
@@ -17,13 +22,39 @@ const Label = styled.Text`
     padding-left: 15px;
 `;
 
+const RadioHolder = styled.View`
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+`;
 
-export const WeeksDropdown = (props) => {  
+export const DaysCheckbox = (props) => {  
     return (
     <Container>
         <Label>Days Per Week</Label>
-        
-
+        <RadioHolder>
+            <RadioButton
+                label={'1'}
+            />
+            <RadioButton
+                label={'2'}
+            />
+            <RadioButton
+                label={'3'}
+            />
+            <RadioButton
+                label={'4'}
+            />
+            <RadioButton
+                label={'5'}
+            />
+            <RadioButton
+                label={'6'}
+            />
+            <RadioButton
+                label={'7'}
+            />
+        </RadioHolder>
     </Container>
     );
   };
