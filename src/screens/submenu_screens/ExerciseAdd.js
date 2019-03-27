@@ -7,11 +7,12 @@ import {Colors} from '../../utils/Colors';
 import {SubScreenTitle} from '../../components/text/SubScreenTitle';
 import {RedTextButton} from '../../components/buttons/RedTextButton';
 
-
-import {EditDayPicker} from '../../components/inputs/EditDayPicker';
-import {EditWeekPicker} from '../../components/inputs/EditWeekPicker';
-import { AddExercise } from '../../components/buttons/AddExercise';
 import {RedGradientButton} from '../../components/buttons/RedGradientButton';
+import { ExerciseTitle } from '../../components/inputs/exerciseInputs/ExerciseTitle';
+import { RepTypePicker } from '../../components/inputs/exerciseInputs/RepTypePicker';
+import { SetsPicker } from '../../components/inputs/exerciseInputs/SetsPicker';
+import { RepPicker } from '../../components/inputs/exerciseInputs/RepPicker';
+import { WeightInput } from '../../components/inputs/exerciseInputs/WeightInput';
 
 
 type Props = {};
@@ -34,6 +35,11 @@ class CreateProgramme extends Component<Props> {
           Add Exercise
         </SubScreenTitle>
         </View>
+        <ExerciseTitle/>
+        <SetsPicker/>
+        <RepTypePicker/>
+        <RepPicker/>
+        <WeightInput/>
         <View style={styles.center}>
             <RedGradientButton>
                 Add
