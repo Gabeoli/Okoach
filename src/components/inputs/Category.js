@@ -8,6 +8,7 @@ import {Colors} from '../../utils/Colors';
 import RNPickerSelect from 'react-native-picker-select';
 
 const Container = styled.View`
+    margin-bottom: 20px
 `;
 const Label = styled.Text`
     font-family: ${Fonts.Roboto};

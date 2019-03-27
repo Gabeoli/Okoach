@@ -31,20 +31,13 @@ class CreateProgramme extends Component<Props> {
           <SubScreenTitle 
             onPress={() => this.props.navigation.goBack()}
           >
-          Edit Programme
+          Add Exercise
         </SubScreenTitle>
         </View>
-        <View style={styles.row}>
-          <EditWeekPicker/>
-          <EditDayPicker/>
-        </View>
         <View style={styles.center}>
-          <AddExercise
-            onPress={() => this.props.navigation.navigate('AddExercise')}
-          />
-          <RedGradientButton>
-          Save
-          </RedGradientButton>
+            <RedGradientButton>
+                Add
+            </RedGradientButton>
         </View>
       </ScrollView>
     );

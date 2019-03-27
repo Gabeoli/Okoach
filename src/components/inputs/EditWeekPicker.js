@@ -52,12 +52,12 @@ const placeholder = {
     color: '#9EA0A4',
   };
 
-export const WeeksDropdown = (props) => {  
+export const EditWeekPicker = (props) => {  
     return (
 
         
     <Container>
-        <Label>How Many Weeks?</Label>
+        <Label>Week</Label>
         <View
             style={pickerSelectStyles.input}
         >

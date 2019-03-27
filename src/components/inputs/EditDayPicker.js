@@ -43,6 +43,10 @@ const categories = [
         label: '6',
         value: '6',
     },
+    {
+        label: '7',
+        value: '7',
+    },
 
 ];
 
@@ -52,12 +56,12 @@ const placeholder = {
     color: '#9EA0A4',
   };
 
-export const WeeksDropdown = (props) => {  
+export const EditDayPicker = (props) => {  
     return (
 
         
     <Container>
-        <Label>How Many Weeks?</Label>
+        <Label>Day</Label>
         <View
             style={pickerSelectStyles.input}
         >

@@ -14,6 +14,7 @@ import PublicProgrammesScreen from './screens/submenu_screens/PublicProgrammes';
 import SavedProgrammesScreen from './screens/submenu_screens/SavedProgrammes';
 import CreateProgrammeScreen from './screens/submenu_screens/CreateProgramme';
 import EditProgrammeScreen from './screens/submenu_screens/EditProgramme';
+import AddExerciseScreen from './screens/submenu_screens/ExerciseAdd';
 
 import { createIconSetFromFontello } from 'react-native-vector-icons';
 import fontelloConfig from '../config.json';
@@ -106,7 +107,8 @@ const SavedProgrammesStack = createStackNavigator (
     {
         SavedProgrammes: SavedProgrammesScreen,
         CreateProgramme: CreateProgrammeScreen,
-        EditProgramme: EditProgrammeScreen
+        EditProgramme: EditProgrammeScreen,
+        AddExercise: AddExerciseScreen
     },
     {
         headerMode: 'none',
