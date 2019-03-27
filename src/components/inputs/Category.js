@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Text, StyleSheet} from 'react-native';
+import {Text, StyleSheet, View} from 'react-native';
 import styled from 'styled-components/native';
 import { TextInput, Picker } from 'react-native-gesture-handler';
 import {Fonts} from '../../utils/Fonts';
@@ -34,7 +34,7 @@ const categories = [
 ];
 
 const placeholder = {
-    label: 'Select a sport...',
+    label: 'Select Category',
     value: null,
     color: '#9EA0A4',
   };
@@ -45,26 +45,14 @@ export const Category = (props) => {
         
     <Container>
         <Label>Category</Label>
-        <RNPickerSelect
-          placeholder={placeholder}
-          items={categories}
-          onValueChange={value => {
-            this.setState({
-              favSport0: value,
-            });
-          }}
-          onUpArrow={() => {
-            this.inputRefs.firstTextInput.focus();
-          }}
-          onDownArrow={() => {
-            this.inputRefs.favSport1.togglePicker();
-          }}
-          style={pickerSelectStyles.input}
-          value={this.state.favSport0}
-        //   ref={el => {
-        //     this.inputRefs.favSport0 = el;
-        //   }}
-        />
+        <View
+            style={pickerSelectStyles.input}
+        >
+            <RNPickerSelect
+            placeholder={placeholder}
+            items={categories}
+            />
+        </View>
     </Container>
     );
   };
@@ -74,8 +62,9 @@ input: {
     fontSize: 16,
     paddingVertical: 12,
     paddingHorizontal: 10,
+    marginHorizontal: 15,
     borderWidth: 1,
-    borderColor: 'red',
+    borderColor: Colors.red,
     borderRadius: 4,
     color: 'black',
     paddingRight: 30, // to ensure the text is never behind the icon

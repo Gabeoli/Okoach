@@ -41,10 +41,10 @@ class CreateProgramme extends Component<Props> {
           selectedValue={this.state.language}
           onValueChange={(lang) => this.setState({language: lang})}
         />
-        {/* <Category
-          selectedValue={this.state.language}
-          onValueChange={(lang) => this.setState({language: lang})}
-        /> */}
+        <Category
+          // selectedValue={this.state.language}
+          // onValueChange={(lang) => this.setState({language: lang})}
+        />
         <DaysCheckbox>
           
         </DaysCheckbox>
