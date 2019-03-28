@@ -40,8 +40,9 @@ export const UserInputBox = (props) => {
           }}
         />
         <StyledInput
-          defaultValue={props.defaultValue}
+          placeholder={props.placeholder}
           secureTextEntry={props.secureTextEntry}
+          onChangeText={props.onChangeText}
         />   
       </UserInput>
     );

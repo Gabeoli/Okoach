@@ -32,13 +32,9 @@ class SignUp extends Component<Props> {
       password: '',
     };
   }
-
-  onChangeText = (key, val) => {
-    console.log(this.state.username)
-    this.setState({
-      isError: false,
-      [key]: val
-    })
+  saveUser = (username) => {
+    this.props.dispatch({ type: 'SET_SIGNUP_DETAILS', username})
+    this.setState({username: ''})
   }
 
   render() {
@@ -53,30 +49,32 @@ class SignUp extends Component<Props> {
           <View>
             <UserInputBox
               source={require('../../assets/img/login_icon.svg')} 
-              defaultValue={"Username"}
+              placeholder={"Username"}
+              onChangeText={(username) => this.setState({username: username})}
               value={this.state.username}
-              onChangeText={val => this.onChangeText('username', val)}
             />  
           </View>
           <View>
             <UserInputBox
               source={require('../../assets/img/email_icon.svg')} 
-              defaultValue={"Email"}
-              
+              placeholder={"Email"}
+              onChangeText={(email) => this.setState({email: email})}
+              value={this.state.email}             
             />  
           </View>
           <View>
             <UserInputBox
               source={require('../../assets/img/password_icon.svg')} 
-              defaultValue={"Password"}
+              placeholder={"Password"}
               secureTextEntry={true}
-              
+              onChangeText={(password) => this.setState({password: password})}
+              value={this.state.password}
             />  
           </View>
         </View>
         <View style={styles.bottom_buttons}>
             <RedGradientButton
-              onPress={() => this.props.dispatch({ type: SET_SIGNUP_DETAILS, payload: this.props.username })}
+              onPress={() => this.saveUser(this.state.username)}
             >
             Register
             </RedGradientButton>
