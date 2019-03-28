@@ -33,19 +33,20 @@ class SignUp extends Component<Props> {
     };
   }
 
-  saveUser = (username) => {
-    this.props.dispatch({ type: 'SET_SIGNUP_DETAILS', username})
-    this.setState({username: ''})
-  }
+  // saveUser = (username) => {
+  //   this.props.dispatch({ type: 'SET_SIGNUP_DETAILS', username})
+  // }
 
-  saveEmail = (email) => {
-    this.props.dispatch({ type: 'SET_SIGNUP_DETAILS', email})
-    this.setState({email: ''})
-  }
+  // saveEmail = (email) => {
+  //   this.props.dispatch({ type: 'SET_SIGNUP_DETAILS', email})
+  // }
 
-  savePass = (password) => {
-    this.props.dispatch({ type: 'SET_SIGNUP_DETAILS', password})
-    this.setState({password: ''})
+  // savePass = (password) => {
+  //   this.props.dispatch({ type: 'SET_SIGNUP_DETAILS', password})
+  // }
+
+  saveDetails = (username, email, password) => {
+    this.props.dispatch({ type: 'SET_SIGNUP_DETAILS', payload: { username, email, password } })
   }
 
   render() {
@@ -85,9 +86,12 @@ class SignUp extends Component<Props> {
         </View>
         <View style={styles.bottom_buttons}>
             <RedGradientButton
-              onPress={() => {this.saveUser(this.state.username);
-                this.saveEmail(this.state.email); 
-                this.savePass(this.state.password);}}
+              // onPress={() => {this.saveUser(this.state.username);
+              //   this.saveEmail(this.state.email); 
+              //   this.savePass(this.state.password);
+              //   // this.props.navigation.navigate('Home')
+              // }}
+              onPress={() => {this.saveDetails(this.state.username, this.state.email, this.state.password)}}
             >
             Register
             </RedGradientButton>

@@ -1,18 +1,34 @@
 import { SET_SIGNUP_DETAILS } from './Actions';
 
-export default function (state = [], action) {
+const initialState = [
+  {
+    username: '',
+    email: '',
+    password: '',
+  }
+]
+
+export default function (state = initialState, action) {
   switch (action.type) {
       case SET_SIGNUP_DETAILS:
-      // return Object.assign({}, state, { signup: action.payload });
 
-      return[
-        ...state, {
-          username: action.username,
-          email: action.email,
-          password: action.password
+      return [
+        {
+          username: action.payload.username,
+          email: action.payload.email,
+          password: action.payload.password
         }
-      ]
+      ];
 
-      default: return state;
+      default:
+        return initialState
+
+      // return state => state.merge({
+      //   username: action.username,
+      //   email: action.email,
+      //   password: action.password,
+      // })
+
   }
+  
 }
