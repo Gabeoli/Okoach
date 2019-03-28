@@ -82,7 +82,9 @@ class Home extends Component<Props> {
           <Text style={styles.bodyText}>
             Looks like you’re not following a programme, Have a browse.
           </Text>
-          <RedGradientButton>
+          <RedGradientButton
+            onPress={() => this.props.navigation.navigate('SavedProgrammes')}
+          >
             Programmes
           </RedGradientButton>
 

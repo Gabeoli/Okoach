@@ -25,13 +25,13 @@ class Login extends Component<Props> {
           <View>
             <UserInputBox
               source={require('../../assets/img/login_icon.svg')} 
-              defaultValue={"Username"}
+              placeholder={"Username"}
             />  
           </View>
           <View>
             <UserInputBox
               source={require('../../assets/img/email_icon.svg')} 
-              defaultValue={"Password"}
+              placeholder={"Password"}
               secureTextEntry={true}
             />  
           </View>

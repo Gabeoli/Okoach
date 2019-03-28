@@ -26,13 +26,21 @@ const Label = styled.Text`
 
 `;
 
+var dateNames = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT','NOV','DEC']
+var dt = new Date();
+
+var day = dt.getDate();
+var month = dateNames[dt.getMonth()];
+var year = dt.getFullYear();
+
+var dateLabel = day + ' ' + month + ' ' + year;
 export const CalendarButton = (props) => {
   return (
     <ButtonContainer
       onPress={props.onPress}      
     >
         <Label>
-            6 FEB 2019
+            {dateLabel}
         </Label>
     </ButtonContainer>
   );
