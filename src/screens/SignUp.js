@@ -33,24 +33,11 @@ class SignUp extends Component<Props> {
     };
   }
 
-  // saveUser = (username) => {
-  //   this.props.dispatch({ type: 'SET_SIGNUP_DETAILS', username})
-  // }
-
-  // saveEmail = (email) => {
-  //   this.props.dispatch({ type: 'SET_SIGNUP_DETAILS', email})
-  // }
-
-  // savePass = (password) => {
-  //   this.props.dispatch({ type: 'SET_SIGNUP_DETAILS', password})
-  // }
-
   saveDetails = (username, email, password) => {
     this.props.dispatch({ type: 'SET_SIGNUP_DETAILS', payload: { username, email, password } })
   }
 
   render() {
-    console.log(this.props)
     return (
       <View style={styles.container}>
         <View style={styles.startup}>
@@ -86,12 +73,9 @@ class SignUp extends Component<Props> {
         </View>
         <View style={styles.bottom_buttons}>
             <RedGradientButton
-              // onPress={() => {this.saveUser(this.state.username);
-              //   this.saveEmail(this.state.email); 
-              //   this.savePass(this.state.password);
-              //   // this.props.navigation.navigate('Home')
-              // }}
-              onPress={() => {this.saveDetails(this.state.username, this.state.email, this.state.password)}}
+              onPress={() => {this.saveDetails(this.state.username, this.state.email, this.state.password);
+              this.props.navigation.navigate('Welcome');
+              console.log(this.state.username)}}
             >
             Register
             </RedGradientButton>

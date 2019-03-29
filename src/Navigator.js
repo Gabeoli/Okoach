@@ -8,6 +8,7 @@ import FriendsScreen from './screens/Friends';
 import ProfileScreen from './screens/Profile';
 import SignUpScreen from './screens/SignUp';
 import Hamburger from './screens/Hamburger';
+import WelcomeScreen from './screens/Welcome';
 
 import MyCoachScreen from './screens/submenu_screens/MyCoach';
 import PublicProgrammesScreen from './screens/submenu_screens/PublicProgrammes';
@@ -145,6 +146,7 @@ export default createAppContainer(createSwitchNavigator(
     Startup: StartupScreen,
     SignUp: SignUpScreen,
     Login: LoginStack,
+    Welcome: WelcomeScreen,
     App: HamburgerNav,
   },
   {
