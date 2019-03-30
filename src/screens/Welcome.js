@@ -7,7 +7,6 @@ import LinearGradient from 'react-native-linear-gradient';
 import { connect } from 'react-redux';
 
 /*Actions*/
-import {SET_SIGNUP_DETAILS} from '../store/signUp/Actions';
 
 /*Vars*/
 import {Fonts} from '../utils/Fonts';
@@ -17,21 +16,14 @@ import StartupLogo from '../components/text/StartupLogo';
 import {RedGradientButton} from '../components/buttons/RedGradientButton';
 import {OkoachText} from '../components/text/OkoachText';
 import {GeneralText} from '../components/text/GeneralText';
+import SignUp from '../screens/SignUp';
 
 
 type Props = {};
 class Welcome extends Component<Props> {
-  constructor(props) {
-    super(props);
-    this.state = {
-      username: '',
-      email: '',
-      password: '',
-    };
-  }
 
   render() {
-    console.log(this.state);
+    console.log(this.props);
     return (
       <View style={styles.container}>
         <View style={styles.startup}>

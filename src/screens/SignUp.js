@@ -73,9 +73,12 @@ class SignUp extends Component<Props> {
         </View>
         <View style={styles.bottom_buttons}>
             <RedGradientButton
-              onPress={() => {this.saveDetails(this.state.username, this.state.email, this.state.password);
-              this.props.navigation.navigate('Welcome');
-              console.log(this.state.username)}}
+              onPress={
+                () => {
+                  this.saveDetails(this.state.username, this.state.email, this.state.password);
+                  this.props.navigation.navigate('Welcome');
+                }
+              }
             >
             Register
             </RedGradientButton>
@@ -119,4 +122,4 @@ const mapStateToProps = (state) => ({
   password: state.password,
 });
 
-export default connect(mapStateToProps)(SignUp);
+export default connect()(SignUp);
