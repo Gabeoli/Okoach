@@ -16,7 +16,10 @@ class SavedProgrammesB extends Component<Props> {
       <View style={styles.container}>
         <View style={styles.header}>
           <SubScreenTitle 
-            onPress={() => this.props.navigation.navigate('Home')}
+            onPress={() => this.props.navigation.navigate('Home', {
+              version: 'two'
+            }
+            )}
           >
           Saved Programmes 
         </SubScreenTitle>

@@ -23,7 +23,7 @@ class CreateProgrammeA extends Component<Props> {
   super(props);
 
     this.state = {
-      state: "1"
+      cat: '',
     }
   }
 
@@ -39,12 +39,18 @@ class CreateProgrammeA extends Component<Props> {
         </View>
         <ProgrammeTitle/>
         <WeeksDropdown
-          selectedValue={this.state.language}
-          onValueChange={(lang) => this.setState({language: lang})}
+          onValueChange={value => {
+            this.setState({
+              cat: value,
+            });
+          }}
         />
         <Category
-          // selectedValue={this.state.language}
-          // onValueChange={(lang) => this.setState({language: lang})}
+          onValueChange={value => {
+            this.setState({
+              cat: value,
+            });
+          }}
         />
         <DaysCheckbox/>
         <DescriptionInput/>

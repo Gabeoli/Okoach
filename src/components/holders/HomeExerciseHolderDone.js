@@ -44,16 +44,16 @@ const Number = styled.Text`
     padding-top: 10px
 `;
 
-const GoHolder = styled.TouchableOpacity`
-    border: solid 3px ${Colors.red};
+const Done = styled.View`
     text-align: center;
     width: 80%;
     height: 80%;
     justify-content: center;
     align-items: center;
+    background: ${Colors.green};
 `;
 
-const GoBtn = styled.Text`
+const DoneText = styled.Text`
     font-family: ${Fonts.Roboto};
     font-weight: 700;
     text-transform: uppercase;
@@ -85,7 +85,7 @@ const ColFour = styled.View`
     align-items: center;
     justify-content: center;
 `;
-export const HomeExerciseHolder = (props) => {
+export const HomeExerciseHolderDone = (props) => {
   return (
     <Container>
         <Title>{props.Title}</Title>
@@ -103,11 +103,11 @@ export const HomeExerciseHolder = (props) => {
                 <Number>{props.Weight}</Number>
             </ColThree>
             <ColFour>
-                <GoHolder
+                <Done
                     onPress={props.onPress}
                 >
-                    <GoBtn>Go</GoBtn>
-                </GoHolder>
+                    <DoneText>Done</DoneText>
+                </Done>
             </ColFour>
         </Columns>
     </Container>

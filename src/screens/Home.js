@@ -8,6 +8,7 @@ import {Fonts} from '../utils/Fonts';
 import {Colors} from '../utils/Colors';
 import StartupLogo from '../components/text/StartupLogo';
 import {HomeExerciseHolder} from '../components/holders/HomeExerciseHolder';
+import {HomeExerciseHolderDone} from '../components/holders/HomeExerciseHolderDone';
 const date = new Date();
 
 type Props = {};
@@ -23,6 +24,8 @@ class Home extends Component<Props> {
   };
 
   render() {
+    const homeVersion = this.props.navigation.getParam('version', 'one');
+    console.log(homeVersion);
     return (
       <View style={styles.container}>
         <View style={styles.header}>
@@ -77,33 +80,78 @@ class Home extends Component<Props> {
               }}
             />
         </View>
-        <View style={styles.body}>
-          <HomeExerciseHolder
-              Title={'Snatch'}
-              Sets={'3'}
-              Reps={'2'}
-              Weight={'85%'}
-            />
-            <HomeExerciseHolder
-              Title={'Squat'}
-              Sets={'5'}
-              Reps={'5'}
-              Weight={'60%'}
-            />
-          <Text style={styles.bodyText}>
-            Looks like you’re not following a programme, Have a browse.
-          </Text>
-          <RedGradientButton
-            onPress={() => this.props.navigation.navigate('SavedProgrammes')}
-          >
-            Programmes
-          </RedGradientButton>
-
-        </View>        
+          {
+            homeVersion == 'one' &&           
+          <View style={styles.body}>
+            <Text style={styles.bodyText}>
+              Looks like you’re not following a programme, Have a browse.
+            </Text>
+            <RedGradientButton
+              onPress={() => this.props.navigation.navigate('SavedProgrammes')}
+            >
+              Programmes
+            </RedGradientButton>
+          </View>
+          }    
+          {
+            homeVersion == 'two' &&
+            <View style={styles.body}>
+                <HomeExerciseHolder
+                Title={'Snatch'}
+                Sets={'3'}
+                Reps={'2'}
+                Weight={'85%'}
+                onPress={() => this.props.navigation.navigate('TrackA')}
+              />
+              <HomeExerciseHolder
+                Title={'Squat'}
+                Sets={'5'}
+                Reps={'5'}
+                Weight={'60%'}
+              />
+            </View>
+          }
+          {
+            homeVersion == 'three' &&
+            <View style={styles.body}>
+                <HomeExerciseHolderDone
+                Title={'Snatch'}
+                Sets={'3'}
+                Reps={'2'}
+                Weight={'85%'}
+              />
+              <HomeExerciseHolder
+                Title={'Squat'}
+                Sets={'5'}
+                Reps={'5'}
+                Weight={'60%'}
+                onPress={() => this.props.navigation.navigate('TrackB')}
+              />
+            </View>
+          }
+          {
+            homeVersion == 'four' &&
+            <View style={styles.body}>
+                <HomeExerciseHolderDone
+                Title={'Snatch'}
+                Sets={'3'}
+                Reps={'2'}
+                Weight={'85%'}
+              />
+              <HomeExerciseHolderDone
+                Title={'Squat'}
+                Sets={'5'}
+                Reps={'5'}
+                Weight={'60%'}
+              />
+            </View>
+          }
       </View>
     );
   }
 };
+
+
 
 const styles = StyleSheet.create({
   container: {

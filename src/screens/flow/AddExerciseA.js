@@ -37,7 +37,12 @@ class AddExerciseA extends Component<Props> {
         </View>
         <ExerciseTitle/>
         <SetsPicker/>
-        <RepTypePicker/>
+        <RepTypePicker
+          onValueChange={value => {
+            this.setState({
+              cat: value,
+            });
+          }}/>
         <RepPicker/>
         <WeightInput/>
         <View style={styles.center}>

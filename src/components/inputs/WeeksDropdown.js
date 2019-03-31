@@ -64,6 +64,7 @@ export const WeeksDropdown = (props) => {
             <RNPickerSelect
             placeholder={placeholder}
             items={categories}
+            onValueChange={props.onValueChange}
             />
         </View>
     </Container>

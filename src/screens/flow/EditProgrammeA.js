@@ -35,8 +35,18 @@ class EditProgrammeA extends Component<Props> {
         </SubScreenTitle>
         </View>
         <View style={styles.row}>
-          <EditWeekPicker/>
-          <EditDayPicker/>
+          <EditWeekPicker
+          onValueChange={value => {
+            this.setState({
+              week: value,
+            });
+          }}/>
+          <EditDayPicker
+          onValueChange={value => {
+            this.setState({
+              day: value,
+            });
+          }}/>
         </View>
         <View style={styles.center}>
           <AddExercise

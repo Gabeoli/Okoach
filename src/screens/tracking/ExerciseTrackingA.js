@@ -6,23 +6,27 @@ import {Colors} from '../../utils/Colors';
 
 import {SubScreenTitle} from '../../components/text/SubScreenTitle';
 import {RedTextButton} from '../../components/buttons/RedTextButton';
-
+import {RedGradientButton} from '../../components/buttons/RedGradientButton';
 import {ProgrammeListItem} from '../../components/holders/ProgrammeListItem';
 
 type Props = {};
-class SavedProgrammes extends Component<Props> {
+class ExerciseTrackingA extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
         <View style={styles.header}>
           <SubScreenTitle 
-            onPress={() => this.props.navigation.navigate('Home')}
+            onPress={() => this.props.navigation.navigate('Home', {version: 'two'})}
           >
-          Saved Programmes 
+            Snatch
         </SubScreenTitle>
         </View>
-        <View>
-            <RedGradientButton>Done</RedGradientButton>
+        <View style={styles.buttonholders}>
+            <RedGradientButton
+              onPress={() => this.props.navigation.navigate('Home', {version: 'three'})}
+            >
+              Done
+            </RedGradientButton>
         </View>
       </View>
     );
@@ -35,10 +39,11 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.grey,
   }, 
   buttonholders: {
-    paddingTop: 10,
-    paddingBottom: 10
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center'
   }
 });
 
 
-export default SavedProgrammes;
+export default ExerciseTrackingA;

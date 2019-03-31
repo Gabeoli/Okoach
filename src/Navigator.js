@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Animated, Easing }from 'react-native';
 import { createSwitchNavigator, createStackNavigator, createAppContainer, createBottomTabNavigator, createDrawerNavigator, Transitioner} from 'react-navigation';
 import LoginScreen from './screens/Login';
 import StartupScreen from './screens/Startup';
@@ -30,6 +31,11 @@ import EditProgrammeC from './screens/flow/EditProgrammeC';
 import SavedProgrammesB from './screens/flow/SavedProgrammesB';
 import ProgrammeDetailsA from './screens/flow/ProgrammeDetailsA';
 import ProgrammeDetailsB from './screens/flow/ProgrammeDetailsB';
+
+//CREATE TRACK
+
+import ExcerciseTrackingA from './screens/tracking/ExerciseTrackingA';
+import ExcerciseTrackingB from './screens/tracking/ExerciseTrackingB';
 
 import { createIconSetFromFontello } from 'react-native-vector-icons';
 import fontelloConfig from '../config.json';
@@ -73,14 +79,42 @@ const FlowStack = createStackNavigator(
                 headerVisible: false,
             },
         },
-        // transitionConfig : () => ({
-        //     transitionSpec: {
-        //         duration: 0,
-        //         timing: Animated.timing,
-        //         easing: Easing.step0,
-        //     },
-        // }),       
+        transitionConfig : () => ({
+            transitionSpec: {
+                duration: 0,
+                timing: Animated.timing,
+                easing: Easing.step0,
+            },
+        }),       
     },
+);
+
+const TrackStackA = createStackNavigator(
+    {
+        ExcerciseTrackingA: ExcerciseTrackingA
+    },
+    {
+        headerMode: 'none' ,
+        navigationOptions: {
+            headerStyle: {
+                headerVisible: false,
+            },
+        },
+    }
+)
+
+const TrackStackB = createStackNavigator(
+    {
+        ExcerciseTrackingB: ExcerciseTrackingB
+    },
+    {
+        headerMode: 'none' ,
+        navigationOptions: {
+            headerStyle: {
+                headerVisible: false,
+            },
+        },
+    }
 )
 
 const BottomTabNav = createBottomTabNavigator(
@@ -193,6 +227,8 @@ export default createAppContainer(createSwitchNavigator(
     Login: LoginStack,
     Welcome: WelcomeScreen,
     App: HamburgerNav,
+    TrackA: TrackStackA,
+    TrackB: TrackStackB
   },
   {
     initialRouteName: 'Startup',

@@ -47,6 +47,7 @@ export const RepTypePicker = (props) => {
             <RNPickerSelect
             placeholder={placeholder}
             items={categories}
+            onValueChange={props.onValueChange}
             />
         </View>
     </Container>

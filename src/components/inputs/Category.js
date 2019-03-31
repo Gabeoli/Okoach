@@ -37,7 +37,7 @@ const categories = [
 const placeholder = {
     label: 'Select Category',
     value: null,
-    color: '#9EA0A4',
+    // color: '#9EA0A4',
   };
 
 export const Category = (props) => {  
@@ -52,6 +52,9 @@ export const Category = (props) => {
             <RNPickerSelect
             placeholder={placeholder}
             items={categories}
+            onValueChange={props.onValueChange}
+            selectedValue={props.selectedValue}
+            style={pickerSelectStyles.text}
             />
         </View>
     </Container>
@@ -69,6 +72,9 @@ input: {
     borderRadius: 4,
     color: 'black',
     paddingRight: 30, // to ensure the text is never behind the icon
-}
+},
+    text: {
+        color: Colors.black
+    }
 });
       
