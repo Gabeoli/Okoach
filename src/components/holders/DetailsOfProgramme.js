@@ -10,21 +10,15 @@ import {StarImage} from '../holders/StarImage';
 import {RedTextButton} from '../buttons/RedTextButton';
 
 const Container = styled.View`
-    width: 100%;
-    height: 115px;
-    background: ${Colors.white};
-    padding: 10px 15px;
-    display: flex;
-    flex-direction: row;
 `;
 
-const Left = styled.View `
-    width: 75%;
+const Row = styled.View`
+    flex-direction: row;
+    margin: 15px
 `;
-const Right = styled.View `
-    width: 25%;
-    align-items: center;
-    position: relative;
+
+const Col = styled.View`
+    width: 50%
 `;
 
 const BtnHolder = styled.View`
@@ -63,36 +57,31 @@ const Rating = styled.View`
     display: flex;
     flex-direction: row
     padding-top: 10px
+    justify-content: flex-end
 `;
 
-export const ProgrammeListItem = (props) => {
+export const DetailsOfProgramme = (props) => {
   return (
     <Container>
-        <Left>
-            <Title>
-                {props.Title}
-            </Title>
-            <Category>
-                Weightlifting
-            </Category>
-            <CreatedBy>Created By 
-                <Username> User123</Username>
-            </CreatedBy>
-            <Rating>
-                <StarImage/>
-                <StarImage/>
-                <StarImage/>
-                <StarImage/>
-                <StarImage/>
-            </Rating>
-        </Left> 
-        <Right>
-            <BtnHolder>
-                <RedTextButton
-                    onPress={props.onPress}
-                >View</RedTextButton>
-            </BtnHolder>
-        </Right>
+        <Row>
+            <Col>
+                <Category>
+                    Weightlifting
+                </Category>
+                <CreatedBy>Created By 
+                    <Username> User123</Username>
+                </CreatedBy>
+            </Col>
+            <Col>
+                <Rating>
+                    <StarImage/>
+                    <StarImage/>
+                    <StarImage/>
+                    <StarImage/>
+                    <StarImage/>
+                </Rating>
+            </Col>
+        </Row>
     </Container>
   );
 };

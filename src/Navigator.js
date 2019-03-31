@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { createSwitchNavigator, createStackNavigator, createAppContainer, createBottomTabNavigator, createDrawerNavigator} from 'react-navigation';
+import { createSwitchNavigator, createStackNavigator, createAppContainer, createBottomTabNavigator, createDrawerNavigator, Transitioner} from 'react-navigation';
 import LoginScreen from './screens/Login';
 import StartupScreen from './screens/Startup';
 import HomeScreen from './screens/Home';
@@ -16,6 +16,19 @@ import SavedProgrammesScreen from './screens/submenu_screens/SavedProgrammes';
 import CreateProgrammeScreen from './screens/submenu_screens/CreateProgramme';
 import EditProgrammeScreen from './screens/submenu_screens/EditProgramme';
 import AddExerciseScreen from './screens/submenu_screens/ExerciseAdd';
+
+
+//CREATE FLOW
+
+import SavedProgrammesA from './screens/flow/SavedProgrammesA';
+import CreateProgrammeA from './screens/flow/CreateProgrammeA';
+import EditProgrammeA from './screens/flow/EditProgrammeA';
+import AddExerciseA from './screens/flow/AddExerciseA';
+import EditProgrammeB from './screens/flow/EditProgrammeB';
+import AddExerciseB from './screens/flow/AddExerciseB';
+import EditProgrammeC from './screens/flow/EditProgrammeC';
+import SavedProgrammesB from './screens/flow/SavedProgrammesB';
+import ProgrammeDetailsA from './screens/flow/ProgrammeDetailsA';
 
 import { createIconSetFromFontello } from 'react-native-vector-icons';
 import fontelloConfig from '../config.json';
@@ -37,6 +50,36 @@ const LoginStack = createStackNavigator(
         },
     }
 );
+
+const FlowStack = createStackNavigator(
+    {   
+        SavedProgrammesA: SavedProgrammesA,
+        CreateProgrammeA: CreateProgrammeA,
+        EditProgrammeA: EditProgrammeA,
+        AddExerciseA: AddExerciseA,
+        EditProgrammeB: EditProgrammeB,
+        AddExerciseB: AddExerciseB,
+        EditProgrammeC: EditProgrammeC,
+        SavedProgrammesB: SavedProgrammesB,
+        ProgrammeDetailsA: ProgrammeDetailsA
+
+    },
+    {
+        headerMode: 'none' ,
+        navigationOptions: {
+            headerStyle: {
+                headerVisible: false,
+            },
+        },
+        // transitionConfig : () => ({
+        //     transitionSpec: {
+        //         duration: 0,
+        //         timing: Animated.timing,
+        //         easing: Easing.step0,
+        //     },
+        // }),       
+    },
+)
 
 const BottomTabNav = createBottomTabNavigator(
     {
@@ -131,7 +174,7 @@ const HamburgerNav = createDrawerNavigator(
             screen: PublicProgrammesScreen
         },
         SavedProgrammes: {
-            screen: SavedProgrammesStack
+            screen: FlowStack
         }
     },
     {

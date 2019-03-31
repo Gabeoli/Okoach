@@ -3,6 +3,7 @@ import {View, TouchableOpacity} from 'react-native';
 import styled from 'styled-components/native';
 
 import {RadioButton} from '../buttons/RadioButton';
+import {RadioButtonOff} from '../buttons/RadioButton_off';
 
 import {TextInput} from 'react-native-gesture-handler';
 import {Fonts} from '../../utils/Fonts';
@@ -35,22 +36,22 @@ export const DaysCheckbox = (props) => {
             <RadioButton
                 label={'1'}
             />
-            <RadioButton
+            <RadioButtonOff
                 label={'2'}
             />
-            <RadioButton
+            <RadioButtonOff
                 label={'3'}
             />
-            <RadioButton
+            <RadioButtonOff
                 label={'4'}
             />
-            <RadioButton
+            <RadioButtonOff
                 label={'5'}
             />
-            <RadioButton
+            <RadioButtonOff
                 label={'6'}
             />
-            <RadioButton
+            <RadioButtonOff
                 label={'7'}
             />
         </RadioHolder>
