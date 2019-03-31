@@ -11,7 +11,7 @@ import {Colors} from '../../utils/Colors';
 
 const Container = styled.View`
 
-    margin-bottom: 20px;
+    margin: 30px 0;
 `;
 
 const Label = styled.Text`

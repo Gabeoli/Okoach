@@ -12,6 +12,7 @@ import {EditDayPicker} from '../../components/inputs/EditDayPicker';
 import {EditWeekPicker} from '../../components/inputs/EditWeekPicker';
 import { AddExercise } from '../../components/buttons/AddExercise';
 import {RedGradientButton} from '../../components/buttons/RedGradientButton';
+import {ExerciseHolder} from '../../components/holders/ExerciseHolder';
 
 
 type Props = {};
@@ -39,7 +40,12 @@ class EditProgrammeB extends Component<Props> {
           <EditDayPicker/>
         </View>
         <View style={styles.center}>
-          <Text>This is B</Text>
+          <ExerciseHolder
+            Title={'Snatch'}
+            Sets={'3'}
+            Reps={'2'}
+            Weight={'85%'}
+          />
           <AddExercise
             onPress={() => this.props.navigation.navigate('AddExerciseB')}
           />

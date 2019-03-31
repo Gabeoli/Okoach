@@ -34,6 +34,9 @@ class ProgrammeDetailsA extends Component<Props> {
                 onPress={() => this.props.navigation.navigate('ProgrammeDetailsB')}
             >Follow
             </RedGradientButton>
+            <Text
+                style={styles.followcheck}
+            >You are not following this programme.</Text>
         </View>
       </View>
     );
@@ -52,6 +55,12 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'center',
       flex: 1
+  },
+  followcheck: {
+      fontFamily: Fonts.Roboto,
+      fontWeight: '500',
+      color: Colors.red,
+      fontSize: 14
   }
 });
 

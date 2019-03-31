@@ -13,6 +13,7 @@ import {WeeksDropdown} from '../../components/inputs/WeeksDropdown';
 import {Category} from '../../components/inputs/Category';
 import { RedGradientButton } from '../../components/buttons/RedGradientButton';
 import { DaysCheckbox } from '../../components/inputs/DaysCheckbox';
+import { DescriptionInput } from '../../components/inputs/DescriptionInput';
 
 
 
@@ -45,9 +46,8 @@ class CreateProgrammeA extends Component<Props> {
           // selectedValue={this.state.language}
           // onValueChange={(lang) => this.setState({language: lang})}
         />
-        <DaysCheckbox>
-          
-        </DaysCheckbox>
+        <DaysCheckbox/>
+        <DescriptionInput/>
 
         <View style ={styles.buttoncontainer}>
           <RedGradientButton

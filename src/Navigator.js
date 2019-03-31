@@ -29,6 +29,7 @@ import AddExerciseB from './screens/flow/AddExerciseB';
 import EditProgrammeC from './screens/flow/EditProgrammeC';
 import SavedProgrammesB from './screens/flow/SavedProgrammesB';
 import ProgrammeDetailsA from './screens/flow/ProgrammeDetailsA';
+import ProgrammeDetailsB from './screens/flow/ProgrammeDetailsB';
 
 import { createIconSetFromFontello } from 'react-native-vector-icons';
 import fontelloConfig from '../config.json';
@@ -61,7 +62,8 @@ const FlowStack = createStackNavigator(
         AddExerciseB: AddExerciseB,
         EditProgrammeC: EditProgrammeC,
         SavedProgrammesB: SavedProgrammesB,
-        ProgrammeDetailsA: ProgrammeDetailsA
+        ProgrammeDetailsA: ProgrammeDetailsA,
+        ProgrammeDetailsB: ProgrammeDetailsB,
 
     },
     {

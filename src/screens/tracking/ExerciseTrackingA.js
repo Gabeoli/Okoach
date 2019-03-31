@@ -10,7 +10,7 @@ import {RedTextButton} from '../../components/buttons/RedTextButton';
 import {ProgrammeListItem} from '../../components/holders/ProgrammeListItem';
 
 type Props = {};
-class SavedProgrammesB extends Component<Props> {
+class SavedProgrammes extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
@@ -21,17 +21,8 @@ class SavedProgrammesB extends Component<Props> {
           Saved Programmes 
         </SubScreenTitle>
         </View>
-        <View style={styles.buttonholders}>
-          <RedTextButton
-            onPress={() => this.props.navigation.navigate('CreateProgrammeA')}
-          >
-            Create
-          </RedTextButton>
-        </View>
-        <View style={styles.alert}>
-          <ProgrammeListItem
-            Title={'Beginner Programme'} 
-            onPress={() => this.props.navigation.navigate('ProgrammeDetailsA')}/>
+        <View>
+            <RedGradientButton>Done</RedGradientButton>
         </View>
       </View>
     );
@@ -46,16 +37,8 @@ const styles = StyleSheet.create({
   buttonholders: {
     paddingTop: 10,
     paddingBottom: 10
-  },
-  alert: {
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  standardtext: {
-    fontFamily: Fonts.Roboto,
-    fontWeight: '300'
   }
 });
 
 
-export default SavedProgrammesB;
+export default SavedProgrammes;

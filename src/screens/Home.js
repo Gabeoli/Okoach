@@ -7,7 +7,7 @@ import {CalendarHolder} from '../components/holders/CalendarHolder';
 import {Fonts} from '../utils/Fonts';
 import {Colors} from '../utils/Colors';
 import StartupLogo from '../components/text/StartupLogo';
-
+import {HomeExerciseHolder} from '../components/holders/HomeExerciseHolder';
 const date = new Date();
 
 type Props = {};
@@ -70,7 +70,6 @@ class Home extends Component<Props> {
             </View>
           </View>
         </Modal>
-        
         <View style={styles.calendarHolder}>
             <CalendarButton 
               onPress ={() => {
@@ -79,6 +78,18 @@ class Home extends Component<Props> {
             />
         </View>
         <View style={styles.body}>
+          <HomeExerciseHolder
+              Title={'Snatch'}
+              Sets={'3'}
+              Reps={'2'}
+              Weight={'85%'}
+            />
+            <HomeExerciseHolder
+              Title={'Squat'}
+              Sets={'5'}
+              Reps={'5'}
+              Weight={'60%'}
+            />
           <Text style={styles.bodyText}>
             Looks like you’re not following a programme, Have a browse.
           </Text>

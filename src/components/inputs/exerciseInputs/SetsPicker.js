@@ -18,37 +18,15 @@ const Label = styled.Text`
     padding-left: 15px;
 `;
 
-const categories = [
-    {
-        label: '1',
-        value: '1',
-    },
-    {
-        label: '2',
-        value: '2',
-    },
-    {
-        label: '3',
-        value: '3',
-    },
-    {
-        label: '4',
-        value: '4',
-    },
-    {
-        label: '5',
-        value: '5',
-    },
-    {
-        label: '6',
-        value: '6',
-    },
-    {
-        label: '7',
-        value: '7',
-    },
-
-];
+const SetsInput = styled.TextInput`
+    font-size: 16px;
+    width: 75px;
+    padding: 12px 10px;
+    margin: 0 15px;
+    border: solid 1px ${Colors.red};
+    border-radius: 4px;
+    color: ${Colors.black};
+`;
 
 const placeholder = {
     label: '0',
@@ -62,30 +40,12 @@ export const SetsPicker = (props) => {
         
     <Container>
         <Label>Sets</Label>
-        <View
-            style={pickerSelectStyles.input}
-        >
-            <RNPickerSelect
-            placeholder={placeholder}
-            items={categories}
-            />
+        <View>
+            <SetsInput
+            keyboardType = 'numeric'/>
         </View>
     </Container>
     );
   };
 
-const pickerSelectStyles = StyleSheet.create({
-input: {
-    fontSize: 16,
-    width: 75,
-    paddingVertical: 12,
-    paddingHorizontal: 10,
-    marginHorizontal: 15,
-    borderWidth: 1,
-    borderColor: Colors.red,
-    borderRadius: 4,
-    color: 'black',
-    paddingRight: 30, // to ensure the text is never behind the icon
-}
-});
       
