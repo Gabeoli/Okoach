@@ -8,6 +8,8 @@ import {SubScreenTitle} from '../../components/text/SubScreenTitle';
 import {RedTextButton} from '../../components/buttons/RedTextButton';
 import {RedGradientButton} from '../../components/buttons/RedGradientButton';
 import {ProgrammeListItem} from '../../components/holders/ProgrammeListItem';
+import {ExerciseBreakdownTitle} from '../../components/holders/ExerciseBreakdownTitle';
+import {ExerciseBreakdown} from '../../components/holders/ExerciseBreakdown';
 
 type Props = {};
 class ExerciseTrackingA extends Component<Props> {
@@ -20,6 +22,21 @@ class ExerciseTrackingA extends Component<Props> {
           >
             Snatch
         </SubScreenTitle>
+        </View>
+        <View styles={styles.content}>
+          <ExerciseBreakdownTitle/>
+          <ExerciseBreakdown
+          Set={'1'}
+          Reps={'2'}
+          />
+          <ExerciseBreakdown
+          Set={'2'}
+          Reps={'2'}
+          />
+          <ExerciseBreakdown
+          Set={'3'}
+          Reps={'2'}
+          />
         </View>
         <View style={styles.buttonholders}>
             <RedGradientButton
@@ -42,6 +59,9 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center'
+  },
+  content: {
+    flex: 2,
   }
 });
 

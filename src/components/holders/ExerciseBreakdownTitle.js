@@ -12,7 +12,6 @@ import {RedTextButton} from '../buttons/RedTextButton';
 
 const Container = styled.View`
     width: 100%;
-    height: 115px;
     padding: 10px 15px;
 `;
 
@@ -68,7 +67,7 @@ const ColThree = styled.View`
     justify-content: center;
 `;
 
-export const ExerciseBreakdown = (props) => {
+export const ExerciseBreakdownTitle = (props) => {
   return (
     <Container>
         <Title>{props.Title}</Title>

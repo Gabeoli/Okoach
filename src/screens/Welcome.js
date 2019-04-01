@@ -17,6 +17,7 @@ import {RedGradientButton} from '../components/buttons/RedGradientButton';
 import {OkoachText} from '../components/text/OkoachText';
 import {GeneralText} from '../components/text/GeneralText';
 import SignUp from '../screens/SignUp';
+import { UsernameText } from '../components/text/UsernameText';
 
 
 type Props = {};
@@ -32,8 +33,11 @@ class Welcome extends Component<Props> {
         </View>
         <View style={styles.content}>   
           <GeneralText>
-            Welcome
+            Welcome to Okoach!
           </GeneralText>
+          <UsernameText>
+            User123
+          </UsernameText>
           <RedGradientButton
             onPress={()=> {this.props.navigation.navigate('Home')}}
           >
@@ -60,10 +64,6 @@ const styles = StyleSheet.create({
     flex:2,
     alignItems: 'center',
     marginTop: 50
-   },
-   userText: {
-     fontFamily: Fonts.UniversalKnowledge,
-     textTransform: 'uppercase'
    }
 });
 

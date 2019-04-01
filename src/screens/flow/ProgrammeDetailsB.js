@@ -21,7 +21,7 @@ class ProgrammeDetailsA extends Component<Props> {
           <SubScreenTitle 
             onPress={() => this.props.navigation.navigate('SavedProgrammesB')}
           >
-          Programme Title Here
+          Beginner Programme
         </SubScreenTitle>
         </View>
         <View style={styles.detailsholder}>

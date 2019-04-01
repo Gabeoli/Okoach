@@ -12,8 +12,9 @@ import {RedTextButton} from '../buttons/RedTextButton';
 
 const Container = styled.View`
     width: 100%;
-    height: 115px;
-    padding: 10px 15px;
+    height: 75px;
+    background: ${Colors.white};
+    padding-bottom: 40px
 `;
 
 const Columns = styled.View`
@@ -28,26 +29,11 @@ const Title = styled.Text`
     padding-top: 10px
 `;
 
-const Label = styled.Text`
-    font-family: ${Fonts.Roboto};
-    font-weight: 500;
-    font-size: 16px;
-    text-align: center;
-`;
-
 const Number = styled.Text`
     font-family: ${Fonts.UniversalKnowledge};
     text-transform: uppercase;
     font-size: 24px;
     padding-top: 10px
-`;
-
-const EditBtn = styled.Text`
-    font-family: ${Fonts.Roboto};
-    font-weight: 700;
-    text-transform: uppercase;
-    color: ${Colors.red};
-    font-size: 16px;
 `;
 
 const ColOne = styled.View`
@@ -68,19 +54,29 @@ const ColThree = styled.View`
     justify-content: center;
 `;
 
+const UserInput = styled.TextInput`
+    width: 80%;
+    height: 100%;
+    font-family: ${Fonts.UniversalKnowledge};
+    text-transform: uppercase
+    text-align: center;
+    padding-top: 10px;
+    font-size: 24px;
+`;
+
 export const ExerciseBreakdown = (props) => {
   return (
     <Container>
         <Title>{props.Title}</Title>
         <Columns>
             <ColOne>
-                <Label>Sets</Label>
+                <Number>{props.Set}</Number>
             </ColOne>
             <ColTwo>
-                <Label>Reps</Label>
+                <Number>{props.Reps}</Number>
             </ColTwo>
             <ColThree>
-                <Label>Weight</Label>
+                <UserInput/>
             </ColThree>
         </Columns>
     </Container>
